@@ -12,8 +12,10 @@ class Api::SessionsController < ApplicationController
     end
 
     def create
-        email= params[:email]
+        
+        email = params[:email]
         password = params[:password]
+        # debugger
         @user = User.find_by_credentials(email, password)
         if @user
             login(@user)
@@ -26,5 +28,11 @@ class Api::SessionsController < ApplicationController
     def destroy
         logout
         head :no_content 
+    end
+
+    private
+
+    def user_params
+        params.require(:user).permit(:email, :password)
     end
 end

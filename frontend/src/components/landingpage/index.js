@@ -13,7 +13,7 @@ export default function HomePage() {
       {currentUser && (
         <button onClick={() => dispatch(logoutUser())}>Logout</button>
       )}
-      <h1>Etsy Homepage</h1>
+      <h1>Etzy Landing page</h1>
       <button onClick={() => setModalOpen(true)}>Sign In</button>
       {modalOpen ? (
         <AuthModal

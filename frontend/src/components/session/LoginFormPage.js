@@ -28,7 +28,7 @@ export default function LoginForm({ onSuccess }) {
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          email
+          Email
           <input
             type="email"
             value={formValues.email}
@@ -39,7 +39,7 @@ export default function LoginForm({ onSuccess }) {
         </label>
 
         <label>
-          password
+          Password
           <input
             type="password"
             value={formValues.password}

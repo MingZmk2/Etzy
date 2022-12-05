@@ -9,6 +9,10 @@ export default function SignupForm({ onSuccess }) {
     firstname: "",
     password: "",
   });
+  // const [password, setPassword] = useState("");
+  // const [repeatPassword, setRepeatPassword] = useState("");
+  // const user = useSelector((state) => state.session.user);
+  // const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));

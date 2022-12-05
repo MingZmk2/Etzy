@@ -1,10 +1,8 @@
 import csrfFetch from "./csrf";
 
-// ACTION TYPES
 const RECEIVE_USER = "users/RECEIVE_USER";
 const REMOVE_USER = "users/REMOVE_USER";
 
-// ACTION CREATORS
 export const receiveUser = (user) => ({
   type: RECEIVE_USER,
   payload: user,
@@ -12,13 +10,13 @@ export const receiveUser = (user) => ({
 
 export const removeUser = () => ({
   type: REMOVE_USER,
-  // payload: userId,
 });
 
 let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 let initialState = {
   current: null,
 };
+debugger;
 if (currentUser) {
   initialState = {
     current: currentUser,
@@ -56,7 +54,6 @@ function storeCurrentUser(user) {
   }
 }
 
-// THUNK ACTION CREATORS
 export const loginUser = (user) => async (dispatch) => {
   let res = await csrfFetch("/api/session", {
     method: "POST",
@@ -85,7 +82,6 @@ export const createUser = (user) => async (dispatch) => {
   dispatch(receiveUser(data.user));
 };
 
-// REDUCER
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case RECEIVE_USER: {
