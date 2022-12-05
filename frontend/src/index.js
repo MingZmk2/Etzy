@@ -11,7 +11,7 @@ import {
   restoreSession,
 } from "./store/userReducer";
 import { BrowserRouter } from "react-router-dom";
-import { ModalProvider } from "./context/Modal";
+import { ModalProvider } from "./context/Modal.js";
 
 window.createUser = createUser;
 window.loginUser = loginUser;
