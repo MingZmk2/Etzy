@@ -10,7 +10,7 @@ import {
   restoreSession,
 } from "./store/userReducer";
 import { BrowserRouter } from "react-router-dom";
-import { ModalProvider } from "./context/modal";
+import { ModalProvider } from "./context/Modal";
 import "./index.css";
 
 window.createUser = createUser;

@@ -1,6 +1,6 @@
 import LoginForm from "../session/LoginForm.js";
 import SignupForm from "../session/SignupForm";
-import { Modal } from "../../context/modal";
+import { Modal } from "../../context/Modal";
 import { useState } from "react";
 
 export function AuthModal({ onClose, onSuccess }) {
