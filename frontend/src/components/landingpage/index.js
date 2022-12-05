@@ -19,7 +19,7 @@ export default function HomePage() {
         <AuthModal
           onSuccess={() => {
             setModalOpen(false);
-            console.log("logged in!");
+            // console.log("logged in!");
           }}
           onClose={() => setModalOpen(false)}
         />

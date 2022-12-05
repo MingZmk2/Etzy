@@ -16,7 +16,7 @@ let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 let initialState = {
   current: null,
 };
-debugger;
+// debugger;
 if (currentUser) {
   initialState = {
     current: currentUser,

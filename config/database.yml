@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: etzy_production
-  username: etzy
-  password: <%= ENV["ETZY_DATABASE_PASSWORD"] %>
+  url: <%= ENV["ETZY_DATABASE_PASSWORD"] %>
