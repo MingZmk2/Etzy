@@ -1,5 +1,5 @@
-import LoginForm from "../session/LoginForm.js";
-import SignupForm from "../session/SignupForm";
+import LoginForm from "../session/LoginFormPage";
+import SignupForm from "../session/SignupFormPage";
 import { Modal } from "../../context/Modal";
 import { useState } from "react";
 
