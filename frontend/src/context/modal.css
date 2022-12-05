@@ -1,0 +1,5 @@
+#modal-content {
+  position: absolute;
+  background-color: rgb(89, 88, 88);
+  border-radius: 10px;
+}
