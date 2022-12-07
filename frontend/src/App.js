@@ -1,14 +1,16 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import LandingPage from "./components/landingpage";
-import "./reset.css";
+import { Route, Switch } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="LandingApp">
+    <div className="app">
       <Switch>
-        <Route path="/">
-          <LandingPage />
+        <Route exact path="/">
+          <Navigation className="navigation" />
+          {/* <LandingPage /> */}
         </Route>
       </Switch>
     </div>

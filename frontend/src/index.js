@@ -1,35 +1,42 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { ModalProvider } from "./context/Modal";
 import "./index.css";
 import App from "./App";
-import { Provider } from "react-redux";
 import configureStore from "./store";
-import {
-  createUser,
-  loginUser,
-  logoutUser,
-  restoreSession,
-} from "./store/userReducer";
-import { BrowserRouter } from "react-router-dom";
-import { ModalProvider } from "./context/modal.js";
-
-window.createUser = createUser;
-window.loginUser = loginUser;
-window.logoutUser = logoutUser;
+import * as sessionActions from "./store/session";
+import csrfFetch from "./store/csrf";
 
 const store = configureStore();
 
-const initializeApp = () => {
-  const root = ReactDOM.createRoot(document.getElementById("root"));
+if (process.env.NODE_ENV !== "production") {
+  window.store = store;
+  window.csrfFetch = csrfFetch;
+  window.sessionActions = sessionActions;
+}
+
+function Root() {
+  return (
+    <div className="all-website">
+      <ModalProvider>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </ModalProvider>
+    </div>
+  );
+}
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+const renderApplication = () => {
   root.render(
     <React.StrictMode>
-      <BrowserRouter>
-        <Provider store={store}>
-          <ModalProvider>
-            <App />
-          </ModalProvider>
-        </Provider>
-      </BrowserRouter>
+      <Root />
     </React.StrictMode>
   );
 };
@@ -38,7 +45,7 @@ if (
   sessionStorage.getItem("currentUser") === null ||
   sessionStorage.getItem("X-CSRF-Token") === null
 ) {
-  store.dispatch(restoreSession()).then(initializeApp);
+  store.dispatch(sessionActions.restoreSession()).then(renderApplication);
 } else {
-  initializeApp();
+  renderApplication();
 }

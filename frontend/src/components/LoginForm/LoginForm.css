@@ -1,0 +1,97 @@
+
+#signin-modal{
+  font-size: 20px;
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-weight: 500; 
+}
+.login-element{
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.register_on_modal:visited {
+  color: black;
+  text-decoration: none;
+}
+.header_login_modal{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login_text{
+  font-size: 13px;
+  margin-bottom:2px;
+}
+
+.signin_button{
+  background-color: black;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  padding-left: 140px;
+  padding-right: 140px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.signin_button:hover{
+  background-color: rgb(68, 66, 66);
+  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+  /* transform: scaleX(1) scaleY(1) perspective(1px); */
+
+}
+.form-control{
+  margin-top: 18px;
+  font-size: 15px;
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+}
+.form-control input{
+  display: block;
+  width: 300px;
+  padding: 10px;
+  height: 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+}
+.form-control label{
+  display: inline-block;
+}
+.form-control small{
+  visibility: hidden;
+}
+.form-control.error small{
+  visibility: visible;
+  color: #A61A2E; 
+  font-size: 16px;
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+}
+.form-control.error input{
+  border-color: rgba(166, 26, 46, 0.35); 
+  background-color: #FDDCD8;
+}
+.login_form input:hover{
+  border: 1px solid gray;
+}
+.or-login {
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+  text-align: center;
+  width: 40px;
+  height: 25px;
+  background-color: white;
+  z-index: 1;
+  margin-left: 36%;
+  position: absolute;
+  bottom:58px;
+}
+.hr-login {
+  border: .5px solid gray;
+  background-color: black;
+  width: 100%;
+  margin-top: 25px;
+}
