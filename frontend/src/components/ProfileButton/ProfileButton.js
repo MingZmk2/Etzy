@@ -15,7 +15,6 @@ function ProfileButton({ user }) {
   };
 
   useEffect(() => {
-    // if (!showMenu) return;
     const closeMenu = () => {
       setShowMenu(false);
     };
@@ -39,7 +38,6 @@ function ProfileButton({ user }) {
       <button className="profile-button" onClick={openMenu}>
         {" "}
         Signed In
-        {/* <AccountCircleIcon style={{ fontSize: 30 }} /> */}
       </button>
       <div className="dropdown-wrap">
         {showMenu && (
