@@ -1,97 +1,96 @@
-import csrfFetch from "./csrf";
+import { csrfFetch } from "./csrf";
 
-export const LOGIN_USER = "session/LOGIN_USER";
-export const LOGOUT_USER = "session/LOGOUT_USER";
+const RECEIVE_USER = "users/RECEIVE_USER";
+const REMOVE_USER = "users/REMOVE_USER";
 
-const loginUser = (payload) => {
-  return {
-    type: LOGIN_USER,
-    payload,
-  };
-};
+export const receiveUser = (user) => ({
+  type: RECEIVE_USER,
+  payload: user,
+});
 
-const logoutUser = () => {
-  return {
-    type: LOGOUT_USER,
-  };
-};
+export const removeUser = () => ({
+  type: REMOVE_USER,
+});
 
-export const login =
-  ({ credential, password }) =>
-  async (dispatch) => {
-    const res = await csrfFetch("/api/session", {
-      method: "POST",
-      body: JSON.stringify({ credential, password }),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      sessionStorage.setItem("currentUser", JSON.stringify(data));
-      dispatch(loginUser(data));
-    }
-  };
-
-export const logout = () => async (dispatch) => {
-  const res = await csrfFetch("/api/session", {
-    method: "DELETE",
-  });
-  storeCurrentUser(null);
-  dispatch(logoutUser());
+export async function restoreCSRF() {
+  const res = await csrfFetch("/api/session");
+  storeCSRFToken(res);
   return res;
-};
+}
 
 export const restoreSession = () => async (dispatch) => {
   const res = await csrfFetch("/api/session");
   storeCSRFToken(res);
   const data = await res.json();
-  storeCurrentUser(data);
-  if (data.user !== null) {
-    dispatch(loginUser(data));
-  }
-};
-
-const storeCurrentUser = (user) => {
-  if (user === undefined) {
-    sessionStorage.setItem("currentUser", JSON.stringify(user));
-  } else {
-    sessionStorage.setItem("currentUser", null);
-  }
-};
-
-export function storeCSRFToken(responseObj) {
-  const csrfToken = responseObj.headers.get("X-CSRF-Token");
-  if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
-}
-export const signup = (user) => async (dispatch) => {
-  const { firstname, email, password } = user;
-  const res = await csrfFetch(`/api/users`, {
-    method: "POST",
-    body: JSON.stringify({
-      firstname,
-      email,
-      password,
-    }),
-  });
-  const data = await res.json();
   storeCurrentUser(data.user);
-  dispatch(loginUser(data));
+  dispatch(receiveUser(data.user));
   return res;
 };
 
-export default function sessionReducer(
-  state = { user: JSON.parse(sessionStorage.getItem("currentUser")) },
-  action
-) {
-  Object.freeze(state);
-  let newState = { ...state };
+function storeCSRFToken(res) {
+  const csrfToken = res.headers.get("X-CSRF-Token");
+  if (csrfToken) {
+    sessionStorage.setItem("X-CSRF-Token", csrfToken);
+  }
+}
+
+function storeCurrentUser(user) {
+  if (user) {
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
+  } else {
+    sessionStorage.removeItem("currentUser");
+  }
+}
+
+export const loginUser = (user) => async (dispatch) => {
+  const res = await csrfFetch("/api/session", {
+    method: "POST",
+    body: JSON.stringify(user),
+  });
+  const data = await res.json();
+  storeCurrentUser(data.user);
+  dispatch(receiveUser(data.user));
+  return res;
+};
+
+export const logoutUser = () => async (dispatch) => {
+  const res = await csrfFetch("/api/session", {
+    method: "DELETE",
+  });
+  storeCurrentUser(null);
+  dispatch(removeUser());
+  return res;
+};
+
+export const createUser = (user) => async (dispatch) => {
+  const res = await csrfFetch("/api/users", {
+    method: "POST",
+    body: JSON.stringify(user),
+  });
+  const data = await res.json();
+  storeCurrentUser(data.user);
+  dispatch(receiveUser(data.user));
+  return res;
+};
+
+const initialState = {
+  current: JSON.parse(sessionStorage.getItem("currentUser")),
+};
+
+const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_USER:
-      newState = {};
-      newState["user"] = action.payload;
-      return newState;
-    case LOGOUT_USER:
-      newState["user"] = null;
-      return newState;
+    case RECEIVE_USER: {
+      return {
+        ...state,
+        current: action.payload,
+      };
+    }
+    case REMOVE_USER: {
+      return { ...state, current: null };
+    }
     default:
       return state;
   }
-}
+};
+
+export default sessionReducer;

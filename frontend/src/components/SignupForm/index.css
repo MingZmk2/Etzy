@@ -1,0 +1,119 @@
+.email-input > label{
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+    display: block;
+    margin-left: 30px;
+}
+
+.first-name-input > label{
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+    display: block;
+    margin-left: 30px;
+}
+
+.password-input > label{
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+    display: block;
+    margin-left: 30px;
+}
+
+.register-btn-form{
+  border-radius: 25px;
+  background-color: grey;
+  border: grey;
+  width: 324px;
+  height: 40px;
+  color: white;
+  margin-top:10px;
+  margin-left: 30px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-top: 25px;
+}
+
+.register-btn-form:hover {
+  background-color: #222222;
+  color: white;
+}
+
+.signup-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  letter-spacing: 0.5px;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  position: relative;
+  top: 10px;
+  margin-left: 30px;
+}
+
+.signup-description {
+  font-size: 16px;
+  font-style: 300;
+  letter-spacing: 1px;
+  padding-bottom: 15px;
+  padding-top:10px;
+  font-weight: 400;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  margin-left:30px;
+}
+
+.new-email, .new-password, .first-name {
+  border-radius: 15px;
+  width: 298px;
+  height: 48px;
+  margin-left: 30px;
+  border: none;
+  box-shadow: inset 0 0 0 2px lightgrey;
+}
+
+
+.password-input, .first-name-input{
+  margin-top: 25px;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+}
+
+.email-input{
+  margin-top:10px;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+}
+
+.error {
+  color:#A61A2E;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+#firstname{
+  transition: border 200ms ease-out,background 200ms ease-out;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #FFFFFF;
+    box-shadow: 0 1px 4px 0 rgb(34 34 34 / 10%) inset;
+    border-color: rgba(34, 34, 34, 0.15);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    color: #222222;
+    display: block;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 48px;
+    outline: 3px solid transparent;
+    min-width: 0;
+}
