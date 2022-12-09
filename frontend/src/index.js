@@ -10,7 +10,7 @@ import {
   logoutUser,
   restoreSession,
 } from "./store/session";
-import { ModalProvider } from "./context/Modal";
+import { ModalProvider } from "./context/Modal.js";
 import "./index.css";
 import "./reset.css";
 
