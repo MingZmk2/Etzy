@@ -81,4 +81,4 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["ETZY_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
