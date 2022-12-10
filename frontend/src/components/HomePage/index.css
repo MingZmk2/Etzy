@@ -120,22 +120,16 @@
 
 }
 
-.featureItems {
+/* .featureItems {
   padding-top: 120px;
   width: 1200px;
   margin: 0 auto;
   cursor: pointer;
-}
-
-.featureItems-2 {
-  padding-top: 20px;
-  width: 1200px;
-  margin: 0 auto;
-  cursor: pointer;
-}
+} */
 
 
-.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8{
+
+/* .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8{
   background-color:rgb(68, 139, 139);
   border-radius: 10px;
   grid-column-start: auto;
@@ -169,7 +163,7 @@
   grid-row-start: 1;
   grid-row-end: 1;
 
-} 
+}  */
 
 
 
