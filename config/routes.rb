@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :products, only: [:create, :index, :show]
     resources :cart, only: [:create, :index, :show, :update, :destroy]
     resources :reviews, only: [:create, :index, :show, :update, :destroy]
-    
+    resources :categories, only: [:create] #bonus feature will add later
     resource :session, only: [:create, :show, :destroy]
   end
 

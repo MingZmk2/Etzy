@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_212440) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_11_091820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_212440) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "cart_products", force: :cascade do |t|
+    t.bigint "buyer_id", null: false
+    t.bigint "product_id", null: false
+    t.integer "quantity", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_cart_products_on_buyer_id"
+    t.index ["product_id"], name: "index_cart_products_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "product_name", null: false
     t.integer "seller_id", null: false
@@ -53,6 +63,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_212440) do
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["product_name"], name: "index_products_on_product_name"
     t.index ["seller_id"], name: "index_products_on_seller_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "reviewer_id", null: false
+    t.bigint "product_id", null: false
+    t.text "comment", null: false
+    t.integer "rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,4 +89,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_212440) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cart_products", "products"
+  add_foreign_key "cart_products", "users", column: "buyer_id"
+  add_foreign_key "reviews", "products"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
 end

@@ -6,7 +6,7 @@ ul{
   --primary-orange: #DA6D5E;
 }
 
-.navBar {
+.nav-bar {
   display: flex;
   /* height: 60px; */
   padding-bottom: 7px;
@@ -25,7 +25,7 @@ ul{
   color: var(--primary-orange);
 }
 
-.searchBar {
+.search-bar {
   flex: 1;
   width: 900px;
   height: 40px;
@@ -35,7 +35,7 @@ ul{
   padding-left: 20px;
 }
 
-.cartBtn {
+.cart-btn {
   margin: 10px;
   margin-top: 4px;
   background-color: white;
@@ -44,7 +44,7 @@ ul{
   height: 24px;
 }
 
-.cartBtn > svg {
+.cart-btn > svg {
   width: 25px;
   height: 25px;
 }
@@ -54,7 +54,7 @@ ul{
   font-size: 15px;
 }
 
-.searchBarBtn {
+.search-bar-btn {
   background-color: transparent;
   border: none;
   font-size: 18px;
@@ -65,7 +65,7 @@ ul{
   z-index: 1;
 }
 
-.signinBtn {
+.signin-btn {
   margin: 10px;
   margin-left: -10px;
   background-color: white;
@@ -73,7 +73,7 @@ ul{
   font-size: 14px;
 }
 
-.profileBtn:hover {
+.profile-btn:hover {
   /* background-color: grey; */
   transform: scale(1.2);
   transition: transform ease-in 150ms;
@@ -82,16 +82,16 @@ ul{
   /* display: block; */
 }
 
-.accountBtn {
+.account-btn {
   display: inline-block;
   position: relative;
 }
 
-.accountBtn:hover .dropdownContent {
+.account-btn:hover .dropdown-content {
   display: block;
 }
 
-.profileBtn {
+.profile-btn {
   background-color: transparent;
   color: grey;
   width: 24px;
@@ -102,18 +102,18 @@ ul{
   overflow: hidden;
 }
 
-.profileBtn > img{
+.profile-btn > img{
   width: 25px;
   height: 25px;
   margin-left: -6px;
   margin-top: -2px;
 }
 
-.dropdownContent:hover {
+.dropdown-content:hover {
   display: block;
 }
 
-.dropdownContent {
+.dropdown-content {
   display: none;
   border: 1px solid white;
   border-radius: 10px;
@@ -125,20 +125,20 @@ ul{
   margin-left:-10px;
 }
 
-.dropdownContent > li {
+.dropdown-content > li {
   /* display: block; */
   padding: 12px 5px;
   text-decoration: none;
   color: black;
 }
 
-.dropdownContent > li > svg{
+.dropdown-content > li > svg{
   width: 24px;
   height: 24px;
   margin-left: -40px;
 }
 
-.dropdownContent li:hover {
+.dropdown-content li:hover {
   background-color: lightgray;
 }
 
@@ -151,7 +151,7 @@ span {
   color: black;
 }
 
-.displayTable{
+.categories-selection{
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -160,7 +160,7 @@ span {
   font-size: 13px;
 }
 
-.displayBar{
+.categories-bar{
   width:1200px;
   margin:0 auto
 }
