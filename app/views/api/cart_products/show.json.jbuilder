@@ -19,3 +19,5 @@ json.products do
       end
     end
 end
+
+#refactor code later to see if seller name appears on top of each product in cart show page
