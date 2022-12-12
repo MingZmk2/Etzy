@@ -38,48 +38,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* <div className="featureItems">
-        <div className="itemsTitle">
-          <h1>Here are some products</h1>
-        </div>
-
-        <ul className="suggestionFirstrow">
-          <li className="suggestion1">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion2">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion3">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion4">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion5">
-            <div className="list"></div>
-          </li>
-        </ul> */}
-
-      {/* <ul className="suggestionSecondrow">
-          <li className="suggestion6">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion7">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion8">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion9">
-            <div className="list"></div>
-          </li>
-          <li className="suggestion10">
-            <div className="list"></div>
-          </li>
-        </ul>
-      </div> */}
-
       <div className="footer">
         <ul className="right-footer">
           <li>&#169; Ming's Etzy</li>

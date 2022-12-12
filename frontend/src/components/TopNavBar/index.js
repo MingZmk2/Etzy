@@ -6,12 +6,15 @@ import { Link, useParams, useHistory } from "react-router-dom";
 import "./index.css";
 
 export default function TopNavBar() {
-  const history = useHistory();
-  const { keyword } = useParams();
   const dispatch = useDispatch();
+  const { keyword } = useParams();
   const currentUser = useSelector((state) => state.user.current);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [text, setText] = useState("");
+
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     history.push(`/products/${text}`); //
@@ -95,17 +98,6 @@ export default function TopNavBar() {
           </svg>
         </button>
       </div>
-
-      {/* <div className="categories-bar">
-        <ul className="categories-selection">
-          <li>Chill Home & Living</li>
-          <li>Calm Essentials</li>
-          <li>Mellow Art</li>
-          <li>Peaceful DIY Crafts</li>
-          <li>Cute Stuff</li>
-          <li>Tranquil Gifts</li>
-        </ul>
-      </div> */}
     </>
   );
 }
