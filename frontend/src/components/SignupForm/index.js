@@ -24,8 +24,7 @@ export default function SignupForm({ onSuccess }) {
       password: formValues.password,
       first_name: formValues.firstname,
     };
-    // dispatch(createUser(user));
-    // onSuccess();
+
     setErrors(null);
     dispatch(createUser(user))
       .then((res) => {

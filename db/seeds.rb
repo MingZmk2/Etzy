@@ -131,7 +131,7 @@ ApplicationRecord.transaction do
   puts "Creating products..."
   #create products from actual Etsy product listing
 
-  product1= Product.create!({
+  product1 = Product.create!({
     product_name: "Sideboard Formentera",
     seller_id: 4,
     description: "PRODUCT INFO
@@ -146,7 +146,7 @@ ApplicationRecord.transaction do
     
     MEDITERRANEAN LATTICE
     
-    Our star material, without a doubt, are the lattice doors, also called "fresquera". It has its origin in the tradition of the old "fridge" furniture of the Mediterranean, which maintained thanks to its highly functional design, fresh food inside.
+    Our star material, without a doubt, are the lattice doors, also called 'fresquera'. It has its origin in the tradition of the old 'fridge' furniture of the Mediterranean, which maintained thanks to its highly functional design, fresh food inside.
     
     Our lattice is made by hand by expert cabinetmakers and artisans from our area. When you take home one of our furniture, you also take a piece of Mediterranean history home.
     
@@ -174,12 +174,13 @@ ApplicationRecord.transaction do
     
     Your furniture will arrive within approximately 12 days. It is the time we need to produce it, package it and make it travel to your home, whenever we can, we will get it a little earlier :)",
     price:"9.89",
-    availability:26,
+    availability:26
   })
-  product1_pic = File.open('./app/asset/images/product_1.jpg')
-  product1.photo.attach(io:product1_pic, filename: "product_1.jpg")
   
-  product2= Product.create!({
+  product1_pic = File.open('./app/assets/images/product_1.jpeg')
+  product1.photo.attach(io:product1_pic, filename: "product_1.jpeg")
+  
+  product2 = Product.create!({
     product_name: "DIY Terrarium Kit",
     seller_id: 3,
     description: "***Please note, this kit does not include succulents or any live plants
@@ -205,17 +206,17 @@ ApplicationRecord.transaction do
     
     ",
     price:"5.00",
-    availability:143,
+    availability:143
   })
-  product2_pic = File.open('./app/asset/images/product_2.jpg')
-  product2.photo.attach(io:product2_pic, filename: "product_2.jpg")
+  product2_pic = File.open('./app/assets/images/product_2.jpeg')
+  product2.photo.attach(io:product2_pic, filename: "product_2.jpeg")
 
-  product3= Product.create!({
+  product3 = Product.create!({
     product_name: "Ceramic Animal Cup",
     seller_id: 2,
     description: "Ceramic Animal cup/Mug with lid/Ceramic cug/Cat cup/Milk mug/Coffee mug/Snack dish/Cat coaster/Snack dish/Gift for cat lover/Vintage tea cup
 
-    ⭐Super cute Ceramic animal shaped Cup,100% lead free， great for breakfast coffee and milk, or for afternoon tea and dessert.
+    ⭐Super cute Ceramic animal shaped Cup,100% lead free, great for breakfast coffee and milk, or for afternoon tea and dessert.
     
     The mug is made of the underglaze process,it is safe for the environment. The mug has a fun three-dimensional embossed texture of animals.
     
@@ -231,12 +232,12 @@ ApplicationRecord.transaction do
     
     Thanks pretty much for your visting, love you all❤",
     price:"15.99",
-    availability:45,
+    availability:45
   })
-  product3_pic = File.open('./app/asset/images/product_3.jpg')
+  product3_pic = File.open('./app/assets/images/product_3.jpg')
   product3.photo.attach(io:product3_pic, filename: "product_3.jpg")
 
-  product4= Product.create!({
+  product4 = Product.create!({
   product_name: "Japanese tea table",
   seller_id: 5,
   description: "Natural bamboo and rattan tatami square table supports customization.
@@ -266,12 +267,12 @@ ApplicationRecord.transaction do
   Bamboo and hemp tabletop
   The table top of the tea table is tightly woven with bamboo at the turn of autumn and summer, which is stable, reliable, tough and durable, while the sitting surface is made of rattan, which is refreshing, comfortable and calm. The tabletop is cross-fixed with hemp rope, which is tough and wear-resistant, and the longer it is, the newer it will be.",
   price:"2.99",
-  availability:32,
+  availability:32
   })
-  product4_pic = File.open('./app/asset/images/product_4.jpg')
-  product4.photo.attach(io:product4_pic, filename: "product_4.jpg")
+  product4_pic = File.open('./app/assets/images/product_4.jpeg')
+  product4.photo.attach(io:product4_pic, filename: "product_4.jpeg")
 
-  product5= Product.create!({
+  product5 = Product.create!({
   product_name: "Juniper Bonsai Tree",
   seller_id: 3,
   description: "✿ 3 to 4 years old & approximately 5ft to 6ft height
@@ -285,12 +286,12 @@ ApplicationRecord.transaction do
   
   All trees come top dressed with fine decorative gravel (premium red lava rock) and an accent mineral (typically Fossil Rock or Snowflake/Firework Obsidian). Accent minerals are not just beautiful, but they're also useful for checking on soil moisture down below without disturbing the potting media. Fossil Rock is a sedimentary mineral with traces of preserved plants and animals (critters are not necessarily visible). Snowflake and Firework Obsidian are relatively rare forms of volcanic glass that display interesting white to red patterns. They're variations of Obsidian formed when volcanic lava cools more slowly than normal, allowing the formation of needle-shaped cristobalite, a type of quartz crystal. Some collectors believe these minerals have healing, calming, and soothing spiritual properties. Fossil Rock is not pictured above, however it is similar in aesthetic to Obsidian.",
   price:"24.00",
-  availability:18,
+  availability:18
   })
-  product5_pic = File.open('./app/asset/images/product_5.jpg')
-  product5.photo.attach(io:product5_pic, filename: "product_5.jpg")
+  product5_pic = File.open('./app/assets/images/product_5.jpeg')
+  product5.photo.attach(io:product5_pic, filename: "product_5.jpeg")
 
-  product6= Product.create!({
+  product6 = Product.create!({
   product_name: "Backflow Incense Burner",
   seller_id: 2,
   description: "Material : Ceramic+ Wood
@@ -302,10 +303,10 @@ ApplicationRecord.transaction do
   price:"10.59",
   availability:4,
   })
-  product6_pic = File.open('./app/asset/images/product_6.jpg')
-  product6.photo.attach(io:product6_pic, filename: "product_6.jpg")
+  product6_pic = File.open('./app/assets/images/product_6.jpeg')
+  product6.photo.attach(io:product6_pic, filename: "product_6.jpeg")
 
-  product7= Product.create!({
+  product7 = Product.create!({
   product_name: "Tibetan Bodhi Seed Bracelet",
   seller_id: 4,
   description: "This bracelet is handmade using 100% natural 5mm Bodhi seeds which are delicately carved. The silver charm is inscribed with the Buddhist mantra Om Mani Padme Hum. This is the most commonly recited Buddhist mantra in Tibet, it is believed to heal the body and mind, evoking a sense of peace.
@@ -316,22 +317,22 @@ ApplicationRecord.transaction do
   
   Bracelet will be dispatched from Ipstones, UK, within 1 working day. If you are purchasing from the USA or Europe and would like the option to track your parcel please select 'add delivery upgrade' at the checkout.",
   price:"12.32",
-  availability:88,
+  availability:88
   })
-  product7_pic = File.open('./app/asset/images/product_7.jpg')
-  product7.photo.attach(io:product7_pic, filename: "product_7.jpg")
+  product7_pic = File.open('./app/assets/images/product_7.jpeg')
+  product7.photo.attach(io:product7_pic, filename: "product_7.jpeg")
 
-  product8= Product.create!({
+  product8 = Product.create!({
   product_name: "Herb Grinder - Buddha Statue Design - 3pc Herb Grinders Herb Cutter Cutting and Grinding Metal Blades 2.5 Inch Travel Size",
   seller_id: 6,
-  description: "FAQ: (as shown) means the grinder will be engraved as it appears in the photo. (add custom) means that you would like to alter the design or add text and will message us with instructions. (1 sided) means only the top will be engraved, (2 sided) means both the top and the bottom will be engraved. Please message us with any additional questions.FAQ: (as shown) means the grinder will be engraved as it appears in the photo. (add custom) means that you would like to alter the design or add text and will message us with instructions. (1 sided) means only the top will be engraved, (2 sided) means both the top and the bottom will be engraved. Please message us with any additional questions.FAQ: (as shown) means the grinder will be engraved as it appears in the photo. (add custom) means that you would like to alter the design or add text and will message us with instructions. (1 sided) means only the top will be engraved, (2 sided) means both the top and the bottom will be engraved. Please message us with any additional questions.Our all wood herb flower grinders measure approximately 2.5" in diameter and 1.8" tall. Compact but plenty large enough for grinding any herb, tobacco, or spice. Sharp teeth cut and grinder with ease. Strong Neodymium magnets hold it together. Shipped in its own individual cardstock kraft box, perfect for gift giving. Laser engraved on the island of Kauai, Hawaii. Free shipping for all US addresses.",
+  description: "FAQ: (as shown) means the grinder will be engraved as it appears in the photo. (add custom) means that you would like to alter the design or add text and will message us with instructions. (1 sided) means only the top will be engraved, (2 sided) means both the top and the bottom will be engraved. Please message us with any additional questions.FAQ: (as shown) means the grinder will be engraved as it appears in the photo. (add custom) means that you would like to alter the design or add text and will message us with instructions. (1 sided) means only the top will be engraved, (2 sided) means both the top and the bottom will be engraved. Please message us with any additional questions.FAQ: (as shown) means the grinder will be engraved as it appears in the photo. (add custom) means that you would like to alter the design or add text and will message us with instructions. (1 sided) means only the top will be engraved, (2 sided) means both the top and the bottom will be engraved. Please message us with any additional questions.Our all wood herb flower grinders measure approximately 2.5inch in diameter and 1.8inch tall. Compact but plenty large enough for grinding any herb, tobacco, or spice. Sharp teeth cut and grinder with ease. Strong Neodymium magnets hold it together. Shipped in its own individual cardstock kraft box, perfect for gift giving. Laser engraved on the island of Kauai, Hawaii. Free shipping for all US addresses.",
   price:"5.40",
-  availability:63,
+  availability:63
   })
-  product8_pic = File.open('./app/asset/images/product_8.jpg')
-  product8.photo.attach(io:product8_pic, filename: "product_8.jpg")
+  product8_pic = File.open('./app/assets/images/product_8.jpeg')
+  product8.photo.attach(io:product8_pic, filename: "product_8.jpeg")
 
-  product9= Product.create!({
+  product9 = Product.create!({
   product_name: "Zen Garden Set Bamboo Wood Medium | Meditation Crystals Airplant Home Decor",
   seller_id: 5,
   description: "This Miniature Zen Garden will bring peace, calm and a touch of sparkle to your home, room, or meditation corner.
@@ -370,12 +371,12 @@ ApplicationRecord.transaction do
   
   The items will be packaged securely and individually. The Mini Zen Garden kit comes with instructions and can easily be put together by adding the sand and items to the base. Instructions are included.",
   price:"8.00",
-  availability:3,
+  availability:3
   })
-  product9_pic = File.open('./app/asset/images/product_9.jpg')
-  product9.photo.attach(io:product9_pic, filename: "product_9.jpg")
+  product9_pic = File.open('./app/assets/images/product_9.jpeg')
+  product9.photo.attach(io:product9_pic, filename: "product_9.jpeg")
 
-  product10= Product.create!({
+  product10 = Product.create!({
   product_name: "Colorful Buddha canvas wall art",
   seller_id: 5,
   description: "Colorful Buddha canvas wall art Buddhism print Yoga wall art Zen wall decor Buddha canvas Buddha Painting print Multi panel canvas arrives ready to hang and no additional framing required.
@@ -400,10 +401,10 @@ ApplicationRecord.transaction do
   Example Size:
   60x40inch | 150x100 cm (3 Panels Set) - means 60x40inch total size | 3 panels - 20x40inch each.",
   price:"4.20",
-  availability:12,
+  availability:12
   })
-  product10_pic = File.open('./app/asset/images/product_10.jpg')
-  product10.photo.attach(io:product10_pic, filename: "product_10.jpg")
+  product10_pic = File.open('./app/assets/images/product_10.jpeg')
+  product10.photo.attach(io:product10_pic, filename: "product_10.jpeg")
 
 
   puts "Done!"

@@ -42,7 +42,6 @@ export default function LoginForm({ onSuccess }) {
       email: "jack@jack.com",
       password: "password",
     };
-
     dispatch(loginUser(user))
       .then((res) => {
         if (res.ok) {

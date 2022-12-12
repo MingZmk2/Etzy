@@ -60,7 +60,7 @@ export default function TopNavBar() {
         </form>
 
         {!currentUser && (
-          <button onClick={() => setModalOpen(true)} className="signinBtn">
+          <button onClick={() => setModalOpen(true)} className="signin-btn">
             Sign in
           </button>
         )}

@@ -4,6 +4,10 @@ json.img @product.photo.url
 #^^if error try---
 # json.photoUrl url_for(@product.photo)
 
+json.seller do
+  json.partial! "api/users/user", user: @product.seller
+end
+
 json.reviews do
   @reviews.each do |review|
     json.set! review.id do
