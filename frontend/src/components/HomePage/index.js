@@ -5,9 +5,7 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <div className="text-container">
-        <h1 className="title-display">
-          Find your inner peace with a couple of goods.
-        </h1>
+        <h1 className="title-display"></h1>
         <div className="products-circle-index-section">
           <ul className="displays">
             <li className="display">
