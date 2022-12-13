@@ -4,18 +4,20 @@
   height: 165px;
   text-align: center;
   font-weight: 100;
+  padding: 18px !important;
 }
 
-.home-bar-wrapper > h1 {
-  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+.header-bar-wrapper > h1 {
+  font-family:"Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif; 
   font-weight: 100;
   margin-top: 0;
+  font-size: 32px;
 }
-.home-bar-wrapper ul{
+.header-bar-wrapper ul{
   display: flex;
   justify-content: center;
 }
-.home-bar-wrapper ul li{
+.header-bar-wrapper ul li{
   list-style: none;
   margin: 30px;
   margin-top: 0px;
@@ -24,7 +26,7 @@
   white-space: wrap; */
 }
 
-.home-bar-wrapper ul li img{
+.header-bar-wrapper ul li img{
   list-style: none;
   width: 114px;
   height: 114px;
@@ -34,7 +36,7 @@
   overflow: hidden !important;
   object-fit: contain;
 }
-.home-bar-wrapper ul li p{
+.header-bar-wrapper ul li p{
   display: -webkit-box;
   margin: 0 auto;
   -webkit-line-clamp: 2;
@@ -44,6 +46,10 @@
   height: 40px;/* Fallback for non-webkit */
 }
 
+.product-circle-tiles{
+  margin-top: 35px;
+}
+
 .product-circle-tiles li{
   display: flex;
   flex-direction: column;
@@ -51,8 +57,4 @@
   color: black;
   max-width: 114px;
   font-weight: 400;
-}
-.product-circle-tiles li:hover{
-  border-bottom: 2px solid black;
-  transform: scale(1.1);
 }

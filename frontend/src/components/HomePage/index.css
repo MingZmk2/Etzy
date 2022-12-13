@@ -7,114 +7,33 @@
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
   max-width: 1350px;
   margin: auto;
+  margin-top: 120px;
 }
 
 .second-section h3{
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   margin-left: 4px;
   margin-bottom: -10px;
 }
+
+
 
 .product-list-tiles{
   display:flex;
   flex-wrap:wrap;
   overflow-y:hidden;
   padding-left: 0 !important;
-  flex: 1 0 100%
+  flex: 1 0 100%;
+  margin-top: 25px;
 }
 
 .product-list-tiles li{
   flex: 1 1 260px 100px;
   height:200px;
   list-style: none;
-  margin: 5px;
+  /* margin: 5px; */
 }
-
-/* 
-.text-container {
-  border-top: 2px solid lightgrey;
-  background-color: #EEEADD;
-  height: 160px;
-  width:100%;
-} */
-
-/* .displays {
-  display: flex;
-  justify-content: center;
-}
-
-.display {
-  justify-content: space-around;
-  justify-content: center;
-  margin: 30px 30px;
-}
-
-.display > img {
-  width: 114px;
-  height: 114px;
-  border-radius: 50%;
-  display: block;
-}
-
-
-.title-display {
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 12px;
-  font-size: 30px;
-  letter-spacing: 1px;
-  font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
-  font-weight: lighter;
-}
-
-
-.list > img {
-  width: 230px;
-  height: 170px;
-  border-radius: 25px;
-  padding-top: 10px;
-  cursor: pointer;
-  margin-right:20px;
-  /* display: block; */
-/* } */
-
-
-.display > img:hover {
-  transform: scale(1.08);
-  transition: transform 0.2s;
-  cursor: pointer;
-  box-shadow: 0 4px 18px rgb(34 34 34 / 15%)
-}
-
-
-
-.display > span {
-  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  width: 150px;
-  cursor: pointer;
-  margin: 20px;
-  position: relative;
-  top: 17px;
-}
-
-.display:hover span{
-  color: #595959;
-}
-
-.display:hover{
-  border-bottom: 2px solid #595959;
-  padding-bottom:25px;
-}
-
-.displays-2{
-  padding-top:20px;
-  display: flex;
-  justify-content: center;
-} */
-
 
 .footer {
   position: relative;
@@ -139,95 +58,4 @@
 }
 
 
-/* .product-index-section{
-  padding-top: 20px;
-  width: 1200px;
-  margin: 150px auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(150px, auto);
-  gap: 10px;
-
-} */
-
-/* .featureItems {
-  padding-top: 120px;
-  width: 1200px;
-  margin: 0 auto;
-  cursor: pointer;
-} */
-
-
-
-/* .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8{
-  background-color:rgb(68, 139, 139);
-  border-radius: 10px;
-  grid-column-start: auto;
-}
-
-.item1, .item3, .item6, .item8 {
-  width: 318px;
-  height: 212px;
-  cursor: pointer;
-}
-
-.item2, .item4, .item5, .item7{
-  width: 318px;
-  height: 318px;
-  cursor: pointer;
-}
-
-
-
-
-.item1 {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 1;
-  grid-row-end: 1;
-}
-
-.item2 {
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 1;
-
-}  */
-
-
-
-
-
-.itemsTitle{
-  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
-  padding-top: 25px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  font-weight: 500px;
-}
-
-
-.suggestionFirstrow,
-.suggestionSecondrow {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  padding-bottom: 4px;
-}
-
-/* .suggestion1 {
-  display: block;
-  position: relative; 
-} */
-
-.list {
-  width: 230px;
-  height: 170px;
-  border-radius: 15px;
-  padding-top: 10px;
-  cursor: pointer;
-  /* display: block; */
-  background-color: #4D4741;
-}
 

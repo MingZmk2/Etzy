@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SingleProductTile from "../SingleProductTile";
+import SingleProductCircleTile from "../SingleProductCircleTile";
 import _ from "underscore";
 import "./index.css";
 import { fetchProducts, getProducts } from "../../store/product";
@@ -19,9 +19,12 @@ export default function HeaderBar() {
 
   const products = useSelector(getProducts);
 
-  //Create logic to randomize the circles under theheader message
+  //Create logic to randomize the circles under the header message
   const productCircleTiles = _.sample(products, 5).map((product) => (
-    <SingleProductTile key={product.id} product={product}></SingleProductTile>
+    <SingleProductCircleTile
+      key={product.id}
+      product={product}
+    ></SingleProductCircleTile>
   ));
 
   useEffect(() => {
@@ -30,7 +33,6 @@ export default function HeaderBar() {
 
   return (
     <div className="header-bar-wrapper">
-      <br />
       <h1>{headerMessage}</h1>
       <ul className="product-circle-tiles">{productCircleTiles}</ul>
     </div>
