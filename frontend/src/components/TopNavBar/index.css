@@ -2,10 +2,6 @@ ul{
   list-style: none;
 }
 
-:root {
-  --primary-orange: #DA6D5E;
-}
-
 .nav-bar {
   display: flex;
   /* height: 60px; */
@@ -151,16 +147,5 @@ span {
   color: black;
 }
 
-.categories-selection{
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  font-family: "Yantramanav", sans-serif;
-  color: grey;
-  font-size: 13px;
-}
 
-.categories-bar{
-  width:1200px;
-  margin:0 auto
-}
+

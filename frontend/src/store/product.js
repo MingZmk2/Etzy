@@ -14,8 +14,10 @@ const receiveProduct = (product) => ({
 });
 
 //useSelectors
-export const getProducts = ({ product }) =>
-  product ? Object.values(product) : [];
+export const getProducts = (state) => {
+  // debugger;
+  return state.products ? Object.values(state.products) : [];
+};
 
 export const getProduct =
   (productId) =>
@@ -24,18 +26,16 @@ export const getProduct =
 
 export const fetchProducts = () => async (dispatch) => {
   const res = await csrfFetch("/api/products");
-  if (res.ok) {
-    const data = await res.json();
-    dispatch(receiveProducts(data));
-  }
+  const data = await res.json();
+  dispatch(receiveProducts(data));
+  return res;
 };
 
 export const fetchProduct = (productId) => async (dispatch) => {
   const res = await csrfFetch(`/api/products/${productId}`);
-  if (res.ok) {
-    const data = await res.json();
-    dispatch(receiveProduct(data));
-  }
+  const data = await res.json();
+  dispatch(receiveProduct(data));
+  return res;
 };
 
 const productReducer = (state = {}, action) => {

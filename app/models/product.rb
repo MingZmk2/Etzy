@@ -35,8 +35,8 @@ class Product < ActiveRecord::Base
     dependent: :destroy 
 
   has_one_attached :photo
-  #use has_many for more photos
-  # has_many_attached :photo
+  # use has_many for more photos
+  # has_many_attached :photos
 
   #for bonus feature later
   # belongs_to :category,
