@@ -29,7 +29,7 @@ export default function HeaderBar() {
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="header-bar-wrapper">

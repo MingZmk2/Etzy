@@ -13,6 +13,7 @@ function HomePage() {
 
   //create logic to randomize the 2x5 tiles
   //use underscore.js to randomize the seed products
+  //better than Math.random()
   const productListTiles = _.sample(products, 10).map((product) => (
     <SingleProductTile key={product.id} product={product}></SingleProductTile>
   ));

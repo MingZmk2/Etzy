@@ -19,10 +19,8 @@ export const getProducts = (state) => {
   return state.products ? Object.values(state.products) : [];
 };
 
-export const getProduct =
-  (productId) =>
-  ({ product }) =>
-    product ? product[productId] : null;
+export const getProduct = (productId) => (state) =>
+  state.products ? state.products[productId] : null;
 
 export const fetchProducts = () => async (dispatch) => {
   const res = await csrfFetch("/api/products");
@@ -42,6 +40,7 @@ const productReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
     case RECEIVE_PRODUCT:
+      // debugger;
       newState[action.product.id] = action.product;
       return newState;
     case RECEIVE_PRODUCTS:

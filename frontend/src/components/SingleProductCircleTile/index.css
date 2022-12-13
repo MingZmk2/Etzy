@@ -2,6 +2,12 @@
   position: relative
 }
 
+.product-name{
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+  font-weight: 500;
+  font-size: 13px;
+}
+
 .product-circle-tiles > .product :hover{
   color: #595959;
   border-bottom: 2px solid #595959;

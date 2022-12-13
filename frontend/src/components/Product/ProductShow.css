@@ -1,10 +1,10 @@
-.product{
+.product1{
   display: flex;
   max-width: 1350px;
   margin: auto;
   margin-top: 34px; 
 }
-.product-container{
+.product1-container{
   min-height: 1000px;
   display: flex;
   flex: 1 0 30%;
@@ -13,55 +13,42 @@
   left: 66%;
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
 }
-.store-name, .store-sales{
-  text-decoration: none;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: 200;
-  color: black;
-  font-size: 18px;
-}
-.store-name{
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.store-sales{
-  font-size: 13px;
-}
-.product-name{
+
+.product1-name{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 100;
   font-size: 26px;
   margin-top:20px;
   margin-bottom: 25px;
 }
-.product-price{
+.product1-price{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
   font-size: 28px;
   line-height: 36px;
   margin: 0;
 }
-.product-options{
+.product1-options{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
   display: flex;  
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
 }
-.product-options input{
+.product1-options input{
   height: 35px;
   max-width:35px;
   margin-left: 15px;
   margin-right: 15px;
   text-align: center;
 }
-.product-options button{
+.product1-options button{
   all: unset;
   font-size: 40px;
   margin-bottom: 5px;
   font-weight: 200;
   display: flex;
 }
-.product-option-button{
+.product1-option-button{
   height: 40px;
   width: 40px;
   border: 1px solid rgba(34, 34, 34, 0) !important;
@@ -72,26 +59,26 @@
   border-radius: 12px;
   cursor: pointer;
 }
-.product-option-button:hover{
+.product1-option-button:hover{
   box-shadow: 0 1px 6px 0 rgba(26, 25, 25, 0.5);
   border: 1px solid rgba(34, 34, 34, 0.15);
 }
-.product-option-title{
+.product1-option-title{
   font-size: 13px;
   display: flex;
   justify-content: space-between;
 }
-.product-quantity-text{
+.product1-quantity-text{
   margin-bottom: 6px;
   text-indent: 15px;
   font-weight: 200;
 }
-#product-stock{
+#product1-stock{
   font-weight: 200;
   margin-bottom: 6px;
   text-indent: 15px;
 }
-.product-option{
+.product1-option{
   appearance: none;
   text-indent: 10px;
   font-weight: 350;
@@ -106,16 +93,16 @@
   margin-top: 8px;
   transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
 }
-.product-img-reviews{
+.product1-img-reviews{
   width: 100%;
   height: 100%;
   max-width:790px;
   max-height: 526px;
   right: 28%;
-  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+  /* box-shadow: 0 4px 20px rgb(34 34 34 / 15%); */
   border-radius: 18px !important;
 }
-.product-img-reviews > img {
+.product1-img-reviews > img {
   width: 100%;
   object-fit: contain;
   height: 100%;
@@ -132,7 +119,7 @@
   margin-right: 5px;
 }
 /* description  */
-.product-description{
+.product1-description{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
   font-weight: 300;
   font-size: 16px;
@@ -140,35 +127,18 @@
   max-height: 210px;
   overflow:scroll;
 }
-#product-description-title{
+#product1-description-title{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 8px;
 }
 
-.product-left{
+.product1-left{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
   display: flex;
   flex: 1 0 60%;
   margin-right: 50px;
   flex-direction: column;
   align-items: center;
-}
-/* you may also like */
-.product-suggest h2{
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 0;
-}
-.product-suggest-product{
-  width: 250px;
-  margin-left: 50px;
-}
-.product-suggest-product li{
-  list-style: none;
-}
-.product-suggest-product img{
-  height: 200px;
-  margin-top: 10px;
 }
