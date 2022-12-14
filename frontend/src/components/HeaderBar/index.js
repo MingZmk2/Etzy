@@ -9,7 +9,7 @@ import { fetchProducts, getProducts } from "../../store/product";
 
 export default function HeaderBar() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.user?.current);
+  const sessionUser = useSelector((state) => state.session.user);
 
   let headerMessage = "Find your inner peace with a couple of goods.";
 

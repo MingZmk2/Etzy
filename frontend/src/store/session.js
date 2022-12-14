@@ -1,93 +1,83 @@
-import { csrfFetch } from "./csrf";
+import csrfFetch from "./csrf";
 
-const RECEIVE_USER = "users/RECEIVE_USER";
-const REMOVE_USER = "users/REMOVE_USER";
+const SET_CURRENT_USER = "session/setCurrentUser";
+const REMOVE_CURRENT_USER = "session/removeCurrentUser";
 
-export const receiveUser = (user) => ({
-  type: RECEIVE_USER,
-  payload: user,
-});
-
-export const removeUser = () => ({
-  type: REMOVE_USER,
-});
-
-export async function restoreCSRF() {
-  const res = await csrfFetch("/api/session");
-  storeCSRFToken(res);
-  return res;
-}
-
-export const restoreSession = () => async (dispatch) => {
-  const res = await csrfFetch("/api/session");
-  storeCSRFToken(res);
-  const data = await res.json();
-  storeCurrentUser(data.user);
-  dispatch(receiveUser(data.user));
-  return res;
+const setCurrentUser = (user) => {
+  return {
+    type: SET_CURRENT_USER,
+    payload: user,
+  };
 };
 
-function storeCSRFToken(res) {
-  const csrfToken = res.headers.get("X-CSRF-Token");
-  if (csrfToken) {
-    sessionStorage.setItem("X-CSRF-Token", csrfToken);
-  }
+const removeCurrentUser = () => {
+  return {
+    type: REMOVE_CURRENT_USER,
+  };
+};
+
+export function storeCSRFToken(response) {
+  const csrfToken = response.headers.get("X-CSRF-Token");
+  if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
 }
 
-function storeCurrentUser(user) {
-  if (user) {
-    sessionStorage.setItem("currentUser", JSON.stringify(user));
-  } else {
-    sessionStorage.removeItem("currentUser");
-  }
-}
+//to be used in console and store for command sessionStorage.currentUser to show current user data
+const storeCurrentUser = (user) => {
+  if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
+  else sessionStorage.removeItem("currentUser");
+};
 
-export const loginUser = (user) => async (dispatch) => {
-  const res = await csrfFetch("/api/session", {
+export const signupUser = (user) => async (dispatch) => {
+  const response = await csrfFetch("/api/users", {
     method: "POST",
     body: JSON.stringify(user),
   });
-  const data = await res.json();
+  const data = await response.json();
   storeCurrentUser(data.user);
-  dispatch(receiveUser(data.user));
-  return res;
+  dispatch(setCurrentUser(data.user));
+  return response;
+};
+
+export const loginUser = (user) => async (dispatch) => {
+  const response = await csrfFetch("/api/session", {
+    method: "POST",
+    body: JSON.stringify(user),
+  });
+  const data = await response.json();
+  storeCurrentUser(data.user);
+  dispatch(setCurrentUser(data.user));
+  return response;
 };
 
 export const logoutUser = () => async (dispatch) => {
-  const res = await csrfFetch("/api/session", {
+  const response = await csrfFetch("/api/session", {
     method: "DELETE",
   });
   storeCurrentUser(null);
-  dispatch(removeUser());
-  return res;
+  dispatch(removeCurrentUser());
+  return response;
 };
 
-export const createUser = (user) => async (dispatch) => {
-  const res = await csrfFetch("/api/users", {
-    method: "POST",
-    body: JSON.stringify(user),
-  });
-  const data = await res.json();
+export const restoreSession = () => async (dispatch) => {
+  const response = await csrfFetch("/api/session");
+  storeCSRFToken(response);
+  const data = await response.json();
   storeCurrentUser(data.user);
-  dispatch(receiveUser(data.user));
-  return res;
+  dispatch(setCurrentUser(data.user));
+  return response;
 };
 
+// debugger;
 const initialState = {
-  current: JSON.parse(sessionStorage.getItem("currentUser")),
+  user: JSON.parse(sessionStorage.getItem("currentUser")),
 };
 
 const sessionReducer = (state = initialState, action) => {
   switch (action.type) {
-    case RECEIVE_USER: {
-      return {
-        ...state,
-        current: action.payload,
-      };
-    }
-    case REMOVE_USER: {
-      return { ...state, current: null };
-    }
+    case SET_CURRENT_USER:
+      return { ...state, user: action.payload };
+    case REMOVE_CURRENT_USER:
+      return { ...state, user: null };
     default:
       return state;
   }

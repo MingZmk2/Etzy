@@ -8,7 +8,7 @@ import "./index.css";
 export default function TopNavBar() {
   const dispatch = useDispatch();
   const { keyword } = useParams();
-  const currentUser = useSelector((state) => state.user.current);
+  const currentUser = useSelector((state) => state.session.user);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [text, setText] = useState("");

@@ -1,4 +1,4 @@
-import { csrfFetch } from "./csrf";
+import csrfFetch from "./csrf";
 
 const RECEIVE_PRODUCT = "product/RECEIVE_PRODUCT";
 const RECEIVE_PRODUCTS = "product/RECEIVE_PRODUCTS";

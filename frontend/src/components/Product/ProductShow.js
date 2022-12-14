@@ -18,7 +18,7 @@ const ProductShow = () => {
   const [quantity, setQuantity] = useState(1);
   const { productId } = useParams();
   const product = useSelector(getProduct(productId)); //get product from state
-  const sessionUser = useSelector((state) => state.user?.current);
+  const currentUser = useSelector((state) => state.session.user);
   const [render, setRender] = useState(false);
   console.log(productId);
   console.log(product);
@@ -47,17 +47,17 @@ const ProductShow = () => {
   // }
 
   let prop;
-  if (product && sessionUser) {
+  if (product && currentUser) {
     prop = {
       productId: productId,
       quantity: quantity,
-      sessionUserId: sessionUser.id,
+      currentUserId: currentUser.id,
       availability: product.availability,
     };
   }
 
   let dynamicAddToCartButton;
-  if (sessionUser) {
+  if (currentUser) {
     dynamicAddToCartButton = <CartModal prop={prop} />;
   } else {
     let message = {

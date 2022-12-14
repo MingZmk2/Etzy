@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import configureStore from "./store";
 import {
-  createUser,
+  signupUser,
   loginUser,
   logoutUser,
   restoreSession,
@@ -14,7 +14,7 @@ import { ModalProvider } from "./context/modal.js";
 import "./index.css";
 import "./reset.css";
 
-window.createUser = createUser;
+window.signupUser = signupUser;
 window.loginUser = loginUser;
 window.logoutUser = logoutUser;
 

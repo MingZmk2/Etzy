@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createUser } from "../../store/session";
+import { signupUser } from "../../store/session";
 import "./index.css";
 
 export default function SignupForm({ onSuccess }) {
@@ -26,7 +26,7 @@ export default function SignupForm({ onSuccess }) {
     };
 
     setErrors(null);
-    dispatch(createUser(user))
+    dispatch(signupUser(user))
       .then((res) => {
         if (res.ok) {
           onSuccess();
