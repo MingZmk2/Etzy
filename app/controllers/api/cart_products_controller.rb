@@ -6,8 +6,9 @@ class Api::CartProductsController < ApplicationController
       else
         @cart = CartProduct.new(cart_params)
       end
-
-      if @cart.save
+      
+      # debugger
+      if @cart.save!
         render :show
         # render "/api/carts/show"
       else
@@ -56,7 +57,7 @@ class Api::CartProductsController < ApplicationController
     private
 
     def cart_params
-        :buyer_id = current_user
+        # :buyer_id = current_user
         params.require(:cart_product).permit(:buyer_id, :product_id, :quantity)
     end
 

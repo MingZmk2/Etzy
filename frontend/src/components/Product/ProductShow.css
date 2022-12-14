@@ -1,7 +1,7 @@
 .product1{
   display: flex;
   max-width: 1350px;
-  margin: auto;
+  margin: auto 0;
   margin-top: 34px; 
 }
 .product1-container{
@@ -82,14 +82,13 @@
   justify-content: space-between;
 }
 .product1-quantity-text{
-  margin-bottom: 6px;
-  text-indent: 15px;
+  margin-top:12px;
+  margin-bottom: 12px;
   font-weight: 200;
 }
 #product1-stock{
   font-weight: 200;
   margin-bottom: 6px;
-  text-indent: 15px;
 }
 .product1-option{
   appearance: none;
@@ -122,9 +121,10 @@
 }
 .shipping{
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .shipping p{
   font-weight: 500;

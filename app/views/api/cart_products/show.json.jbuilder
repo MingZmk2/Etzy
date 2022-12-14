@@ -10,7 +10,7 @@ json.carts do
 end
 
 json.products do
-  @cart.buyer.buyer_items.each do |product|
+  @cart.buyer.buyer_products.each do |product|
       json.set! product.id do 
         json.partial! 'api/products/product', product: product
         if product.photo.attached?

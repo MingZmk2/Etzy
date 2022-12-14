@@ -3,8 +3,10 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import productReducer from "./product";
 import cartReducer from "./cart";
+// import usersReducer from "./users";
 
 const rootReducer = combineReducers({
+  // users: usersReducer,
   session: sessionReducer,
   products: productReducer,
   cart: cartReducer,

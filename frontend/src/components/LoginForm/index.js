@@ -32,7 +32,7 @@ export default function LoginForm({ onSuccess }) {
         }
       })
       .catch(async (res) => {
-        const errors = await res.json();
+        // const errors = await res.json();
         setErrors("Invalid email or password.");
       });
   };

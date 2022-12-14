@@ -21,7 +21,7 @@ export const deleteCart = (cartId) => ({
 });
 
 export const fetchCart = (userId) => async (dispatch) => {
-  const res = await csrfFetch(`/api/cart_products`);
+  const res = await csrfFetch(`/api/users/${userId}`);
   const data = await res.json();
   dispatch(findCart(data.carts));
   return res;

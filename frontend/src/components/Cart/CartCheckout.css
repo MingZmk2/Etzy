@@ -1,0 +1,61 @@
+.products-total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.products-total p{
+  font-weight: 200;
+}
+.products-total-sub{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 200;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.checkout{
+  width: 425px;
+  height: 600px;
+  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 33.33333%;
+  min-width: 260px;
+  margin-left: 50px;
+}
+.secure-payment-header{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+#visa-icon>img{
+  width: 80%;
+}
+.checkout-link {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 15px;
+  margin-top: 15px;
+  width: 95%;
+  text-align: center;
+}
+.checkout-link:hover{
+  background-color: rgb(68, 66, 66);
+  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+}
+.checkout-button{
+  display: flex;
+  justify-content: center;
+}

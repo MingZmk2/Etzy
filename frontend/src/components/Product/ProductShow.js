@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct, fetchProduct } from "../../store/product";
-import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+// import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+// import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-import CartModal from "./CartModal";
+import CartModal from "../CartModal/CartModal";
 import LoginForm from "../LoginForm";
 
 import _ from "underscore";
@@ -20,8 +20,8 @@ const ProductShow = () => {
   const product = useSelector(getProduct(productId)); //get product from state
   const currentUser = useSelector((state) => state.session.user);
   const [render, setRender] = useState(false);
-  console.log(productId);
-  console.log(product);
+  // console.log(productId);
+  // console.log(product);
   useEffect(() => {
     dispatch(fetchProduct(productId));
     setRender(true);
@@ -57,6 +57,7 @@ const ProductShow = () => {
   }
 
   let dynamicAddToCartButton;
+
   if (currentUser) {
     dynamicAddToCartButton = <CartModal prop={prop} />;
   } else {
