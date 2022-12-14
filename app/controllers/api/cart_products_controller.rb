@@ -8,8 +8,8 @@ class Api::CartProductsController < ApplicationController
       end
 
       if @cart.save
-        # render :show
-        render "/api/carts/show"
+        render :show
+        # render "/api/carts/show"
       else
         render json: { errors: @cart.errors.full_messages }, status: 422
       end
@@ -21,14 +21,14 @@ class Api::CartProductsController < ApplicationController
       else
         @carts = CartProduct.all
       end
-      # render :index
-      render: "/api/carts/index"
+      render :index
+      # render: "/api/carts/index"
     end
 
     def show
       @cart = CartProduct.find_by(id: params[:id])
-      # render :show
-      render "/api/carts/show"
+      render :show
+      # render "/api/carts/show"
     end
 
     
@@ -36,8 +36,8 @@ class Api::CartProductsController < ApplicationController
       @cart = CartProduct.find_by(id: params[:id])
       
       if @cart.update(cart_params)
-        # render :show
-        render "/api/carts/show"
+        render :show
+        # render "/api/carts/show"
       else
         render json: { errors: @cart.errors.full_messages }, status: 422
       end
@@ -46,7 +46,7 @@ class Api::CartProductsController < ApplicationController
     def destroy
       @product = CartProduct.find_by(id: params[:id])
       if @product && @product.destroy
-        render: "/api/carts/index"
+        render "/api/carts/index"
       else
         render json: ["Error Not Found"], status: 404
       end
@@ -56,7 +56,8 @@ class Api::CartProductsController < ApplicationController
     private
 
     def cart_params
-        params.require(:cart_item).permit(:buyer_id, :product_id, :quantity)
+        :buyer_id = current_user
+        params.require(:cart_product).permit(:buyer_id, :product_id, :quantity)
     end
 
 end

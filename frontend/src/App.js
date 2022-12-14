@@ -17,6 +17,9 @@ function App() {
         <Route exact path="/products/:productId">
           <ProductShow />
         </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
       </Switch>
     </div>
   );

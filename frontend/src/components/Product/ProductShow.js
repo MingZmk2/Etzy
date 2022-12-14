@@ -6,7 +6,7 @@ import { getProduct, fetchProduct } from "../../store/product";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-import CartModal from "../CartModal/CartModal";
+import CartModal from "./CartModal";
 import LoginForm from "../LoginForm";
 
 import _ from "underscore";

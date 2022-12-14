@@ -1,20 +1,16 @@
 import csrfFetch from "./csrf";
 
-const SET_CURRENT_USER = "session/setCurrentUser";
-const REMOVE_CURRENT_USER = "session/removeCurrentUser";
+export const SET_CURRENT_USER = "session/setCurrentUser";
+export const REMOVE_CURRENT_USER = "session/removeCurrentUser";
 
-const setCurrentUser = (user) => {
-  return {
-    type: SET_CURRENT_USER,
-    payload: user,
-  };
-};
+const setCurrentUser = (user) => ({
+  type: SET_CURRENT_USER,
+  payload: user,
+});
 
-const removeCurrentUser = () => {
-  return {
-    type: REMOVE_CURRENT_USER,
-  };
-};
+const removeCurrentUser = () => ({
+  type: REMOVE_CURRENT_USER,
+});
 
 export function storeCSRFToken(response) {
   const csrfToken = response.headers.get("X-CSRF-Token");
@@ -28,43 +24,43 @@ const storeCurrentUser = (user) => {
 };
 
 export const signupUser = (user) => async (dispatch) => {
-  const response = await csrfFetch("/api/users", {
+  const res = await csrfFetch("/api/users", {
     method: "POST",
     body: JSON.stringify(user),
   });
-  const data = await response.json();
+  const data = await res.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
-  return response;
+  return res;
 };
 
 export const loginUser = (user) => async (dispatch) => {
-  const response = await csrfFetch("/api/session", {
+  const res = await csrfFetch("/api/session", {
     method: "POST",
     body: JSON.stringify(user),
   });
-  const data = await response.json();
+  const data = await res.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
-  return response;
+  return res;
 };
 
 export const logoutUser = () => async (dispatch) => {
-  const response = await csrfFetch("/api/session", {
+  const res = await csrfFetch("/api/session", {
     method: "DELETE",
   });
   storeCurrentUser(null);
   dispatch(removeCurrentUser());
-  return response;
+  return res;
 };
 
 export const restoreSession = () => async (dispatch) => {
-  const response = await csrfFetch("/api/session");
-  storeCSRFToken(response);
-  const data = await response.json();
+  const res = await csrfFetch("/api/session");
+  storeCSRFToken(res);
+  const data = await res.json();
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
-  return response;
+  return res;
 };
 
 // debugger;

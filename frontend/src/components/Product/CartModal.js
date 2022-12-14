@@ -1,13 +1,8 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import { createCart } from "../../store/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import EastIcon from "@mui/icons-material/East";
 import "./CartModal.css";
 
 const style = {
