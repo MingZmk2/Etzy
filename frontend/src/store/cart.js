@@ -62,8 +62,8 @@ export const removeCart = (cartId) => async (dispatch) => {
 const cartReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
-    case SET_CURRENT_USER:
-      return { ...newState, ...action.payload.carts };
+    // case SET_CURRENT_USER:
+    //   return { ...newState, ...action.payload.carts };
     case REMOVE_CURRENT_USER:
       return {};
     case ADD_CART:
