@@ -1,8 +1,11 @@
 class Api::CartProductsController < ApplicationController
     def create
       @cart = CartProduct.find_by_user_and_product(params[:buyer_id], params[:product_id])
+      # debugger
       if @cart
+
         @cart.quantity += params[:quantity]
+        
       else
         @cart = CartProduct.new(cart_params)
       end
@@ -46,12 +49,8 @@ class Api::CartProductsController < ApplicationController
 
     def destroy
       @product = CartProduct.find_by(id: params[:id])
-      if @product && @product.destroy
-        render "/api/carts/index"
-      else
-        render json: ["Error Not Found"], status: 404
-      end
-      # head :no_content 
+      @product.destroy if @product
+      head :no_content
     end
 
     private

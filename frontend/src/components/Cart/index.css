@@ -20,9 +20,25 @@
     width: 1350px;
   }
 .cart > h1{
-  margin-bottom: -30px;
+  font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+  font-size: 34px;
+  line-height: 28px;
+  margin-top: 25px;
+  margin-bottom: -15px;
   font-weight: 300;
 }
+
+.cart > a{
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+  font-size: 16px;   
+  position: absolute;
+  right: 60px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .cart ul{
     /* width: 65%; */
     padding: 0;

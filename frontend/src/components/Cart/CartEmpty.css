@@ -5,7 +5,8 @@
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
 }
 .cart-empty > h1{
-  font-weight: 200;
+  font-weight: 500;
+  font-size: 32px;
 }
 .cart-empty>p{
   margin-top:60px;
@@ -15,5 +16,9 @@
   justify-content: center;
 }
 .cart-empty>#link{
-  color: black;
+  margin-top: 50px;
+  font-size: 32px;
+  color: #DA6D5E;
+  text-decoration: underline;
+
 }

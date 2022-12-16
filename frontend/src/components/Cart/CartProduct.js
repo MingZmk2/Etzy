@@ -2,58 +2,47 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeCart, updateCart } from "../../store/cart";
+import "./CartProduct.css";
 
 function CartProduct({ product }) {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  const [count, setCount] = useState(product.quantity);
-  const [alert, setAlert] = useState(false);
+  const currentUser = useSelector((state) => state.session.user);
+  const [currentQuantity, setNewQuantity] = useState(product.quantity);
+
+  let numsArr = [];
+
+  for (let i = 1; i <= product.stock; i++) {
+    numsArr.push(i);
+  }
+  // console.log(numsArr);
 
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(removeCart(product.id));
   };
 
-  const clickPlusButton = (e) => {
-    if (count < product.stock) {
-      setAlert(false);
-      setCount(count + 1);
-      dispatch(
-        updateCart(product.id, product.productId, count + 1, sessionUser.id)
-      );
-    } else {
-      setAlert(true);
-    }
-  };
+  const handleUpdateQuantity = (e) => {
+    e.preventDefault();
 
-  const clickMinusButton = (e) => {
-    if (count > 0) {
-      setAlert(false);
-      setCount(count - 1);
-      dispatch(
-        updateCart(product.id, product.productId, count - 1, sessionUser.id)
-      );
-    } else if (isNaN(e)) {
-      setCount(0);
-    }
+    let newQuantity = parseInt(e.target.value);
+    setNewQuantity(newQuantity);
+    dispatch(
+      updateCart(product.id, product.productId, newQuantity, currentUser.id)
+    );
   };
-
-  // const stringToNum = (e) => {
-  //   setCount(parseInt(e.target.value));
-  //   setAlert(false);
-  // };
 
   if (!product) return null;
+
   return (
-    <li key={product.id} className="cart-item">
-      <div className="each-item">
-        <div className="cart-item-main">
-          <div className="cart-item-img">
-            <img src={product.photoUrl} alt="" />
+    <li key={product.id} className="cart-product">
+      <div className="each-product">
+        <div className="cart-product-main">
+          <div className="cart-product-img">
+            <img src={product.img} alt="" />
           </div>
-          <div className="cart-item-name">
+          <div className="cart-product-name">
             <Link
-              className="cart-item-name-link"
+              className="cart-product-name-link"
               to={`/products/${product.productId}`}
             >
               {product.product}
@@ -63,32 +52,26 @@ function CartProduct({ product }) {
             </div>
           </div>
 
-          <div className="cart-amount-container">
-            <div className="cart-amount">
-              <button
-                className="cart-additem-button"
-                onClick={clickMinusButton}
-              >
-                -
-              </button>
-              <input
-                id="enter-box"
-                type="text"
-                value={count}
-                required
-                min="0"
-                disabled
-              />
-              <button className="cart-additem-button" onClick={clickPlusButton}>
-                +
-              </button>
-            </div>
-            <div id="cart-stock">Stock: {product.stock}</div>
-            {alert && <div className="cart-alert">Exceed stock limit</div>}
+          <div className="cart-amount-dropdown-container">
+            <select
+              name="quantity"
+              id="quanitity"
+              value={currentQuantity}
+              className="checkout-dropdown"
+              onChange={handleUpdateQuantity}
+            >
+              {numsArr.map((option, i) => {
+                return (
+                  <option value={option} key={i}>
+                    {option}
+                  </option>
+                );
+              })}
+            </select>
           </div>
 
           <div className="cart-prices">
-            ${(product.price * count).toFixed(2)}
+            ${(product.price * currentQuantity).toFixed(2)}
           </div>
         </div>
         <div className="order-options">
@@ -105,9 +88,6 @@ function CartProduct({ product }) {
               <span id="shipping-info">
                 Shipping:<p> Free</p>
               </span>
-              <Link className="cart-explore" to={`/shops/${product.sellerId}`}>
-                Explore more on this store →
-              </Link>
             </div>
           </div>
         </div>

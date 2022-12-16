@@ -1,5 +1,5 @@
 .header-bar-wrapper{
-  background-color: #F8EAE6;
+  background-color: #DDEBE3;
   margin-top: 0;
   height: 165px;
   text-align: center;
@@ -34,7 +34,9 @@
   max-width: 114px;
   border-radius: 50% !important;
   overflow: hidden !important;
-  object-fit: contain;
+  /* object-fit: contain; */
+  margin-top: 6px !important;
+  margin-bottom: 12px !important;
 }
 .header-bar-wrapper ul li p{
   display: -webkit-box;

@@ -212,7 +212,7 @@ ApplicationRecord.transaction do
   product2.photo.attach(io:product2_pic, filename: "product_2.jpeg")
 
   product3 = Product.create!({
-    product_name: "Ceramic Animal Cup",
+    product_name: "Ceramic Shiba Dog Cup",
     seller_id: 2,
     description: "Ceramic Animal cup/Mug with lid/Ceramic cug/Cat cup/Milk mug/Coffee mug/Snack dish/Cat coaster/Snack dish/Gift for cat lover/Vintage tea cup
 
@@ -238,7 +238,7 @@ ApplicationRecord.transaction do
   product3.photo.attach(io:product3_pic, filename: "product_3.jpg")
 
   product4 = Product.create!({
-  product_name: "Japanese tea table",
+  product_name: "Japanese Tea Table",
   seller_id: 5,
   description: "Natural bamboo and rattan tatami square table supports customization.
 
@@ -532,9 +532,9 @@ ApplicationRecord.transaction do
   product16.photo.attach(io:product16_pic, filename: "product_16.jpeg")
 
   product17 = Product.create!({
-  product_name: "Okame cherry live tree",
+  product_name: "Okame Cherry Tree",
   seller_id: 5,
-  description: "Okame cherry live tree seedling 7 to 13 inches",
+  description: "Okame Cherry live Tree seedling 7 to 13 inches",
   price:"1.23",
   availability:865
   })
@@ -542,7 +542,7 @@ ApplicationRecord.transaction do
   product17.photo.attach(io:product17_pic, filename: "product_17.jpeg")
 
   product18 = Product.create!({
-  product_name: "Icee Butter Slime // Sonria Slime // Zen",
+  product_name: "Icee Butter Slime",
   seller_id: 6,
   description: "A icee butter slime crafted for everyday stress relief.
 
@@ -558,7 +558,7 @@ ApplicationRecord.transaction do
   product18.photo.attach(io:product18_pic, filename: "product_18.jpeg")
 
   product19 = Product.create!({
-  product_name: "500ml Large Creative Ceramic 3D Dog Shaped Mug",
+  product_name: "Creative Dog Shaped Mug",
   seller_id: 7,
   description: "Slight uneven hand painting, black spots, needle eyes, bubbles, etc. are within the normal range.
 
@@ -580,7 +580,7 @@ ApplicationRecord.transaction do
   product19.photo.attach(io:product19_pic, filename: "product_19.jpeg")
 
   product20 = Product.create!({
-  product_name: "Zen Buddha Tobacco Smoking Pipe",
+  product_name: "Zen Buddha Smoking Pipe",
   seller_id: 8,
   description: "Meditate and find your zen with this Buddha pipe! Handcrafted with patience and care, this piece is a clog-free tobacco smoking pipe with a natural coconut bowl.",
   price:"13.25",
@@ -590,7 +590,7 @@ ApplicationRecord.transaction do
   product20.photo.attach(io:product20_pic, filename: "product_20.jpeg")
   
   product21 = Product.create!({
-  product_name: "Cute Shark Cat Fried Shrimp Cats Plush Keychains",
+  product_name: "Cute Shark Cat Keychains",
   seller_id: 5,
   description: "Payment : PayPal and western union.
   Please you make the payment within 5 days once you order.
@@ -607,7 +607,7 @@ ApplicationRecord.transaction do
   product21.photo.attach(io:product21_pic, filename: "product_21.jpeg")
 
   product22 = Product.create!({
-  product_name: "Octopus Stuffed Plush Toys",
+  product_name: "Octopus Stuffed Plushie",
   seller_id: 9,
   description: "Octopus Stuffed Plush Toys For Baby Kids Birthday Christmas Children Kid Gifts Cute Dolls Super Soft Plush Toy Cute Octopus Gift for Kids
 
@@ -684,35 +684,35 @@ ApplicationRecord.transaction do
   product25_pic = URI.open('https://etzy-seeds.s3.amazonaws.com/product_25.jpeg')
   product25.photo.attach(io:product25_pic, filename: "product_25.jpeg")
 
-  product26 = Product.create!({
-  product_name: "PP Plush Pillow",
-  seller_id: 12,
-  description: "LUCKY CUSTOMERS WILL RECEIVE A FREE KEYCHAIN IN THEIR PACKAGES :)
+  # product26 = Product.create!({
+  # product_name: "PP Plush Pillow",
+  # seller_id: 12,
+  # description: "LUCKY CUSTOMERS WILL RECEIVE A FREE KEYCHAIN IN THEIR PACKAGES :)
 
-  Best Gift / Joke Idea / Prank for April Fools!
+  # Best Gift / Joke Idea / Prank for April Fools!
   
-  Fast Delivery: We ship within one business day!
+  # Fast Delivery: We ship within one business day!
   
-  Cute PP plush/pillow available in color:
+  # Cute PP plush/pillow available in color:
   
-  - Light
-  - Dark
+  # - Light
+  # - Dark
   
-  Available in size:
+  # Available in size:
   
-  - 12 inch
-  - 20 inch
-  - 28 inch
-  - 35 inch
+  # - 12 inch
+  # - 20 inch
+  # - 28 inch
+  # - 35 inch
   
-  Caution: Stay away from fire
+  # Caution: Stay away from fire
   
-  FINAL SALE, no exchange, refund, or order cancellation",
-  price:"9.24",
-  availability:432
-  })
-  product26_pic = URI.open('https://etzy-seeds.s3.amazonaws.com/product_26.jpeg')
-  product26.photo.attach(io:product26_pic, filename: "product_26.jpeg")
+  # FINAL SALE, no exchange, refund, or order cancellation",
+  # price:"9.24",
+  # availability:432
+  # })
+  # product26_pic = URI.open('https://etzy-seeds.s3.amazonaws.com/product_26.jpeg')
+  # product26.photo.attach(io:product26_pic, filename: "product_26.jpeg")
 
   product27 = Product.create!({
   product_name: "Cute Lighter Kitty Keychain",
@@ -921,7 +921,7 @@ ApplicationRecord.transaction do
   product35_pic = URI.open('https://etzy-seeds.s3.amazonaws.com/product_35.jpeg')
   product35.photo.attach(io:product35_pic, filename: "product_35.jpeg")
 
-  product36 = Product.create!({
+  product26 = Product.create!({
   product_name: "Lotus Flower Necklace",
   seller_id: 12,
   description: "Personalized Engraved Women's Lotus Flower Boho Spiritual Inspirational Stainless Steel and Optional 18K Gold Plating Circle Glass Pendant Necklace in a Free Gift Box.
@@ -965,8 +965,8 @@ ApplicationRecord.transaction do
   price:"12.25",
   availability:54
   })
-  product36_pic = URI.open('https://etzy-seeds.s3.amazonaws.com/product_36.jpeg')
-  product36.photo.attach(io:product36_pic, filename: "product_36.jpeg")
+  product26_pic = URI.open('https://etzy-seeds.s3.amazonaws.com/product_36.jpeg')
+  product26.photo.attach(io:product26_pic, filename: "product_36.jpeg")
 
   product37 = Product.create!({
   product_name: "Japanese Pagoda Lantern",

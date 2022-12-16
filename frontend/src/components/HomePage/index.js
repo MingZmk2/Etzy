@@ -3,26 +3,47 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, getProducts } from "../../store/product";
 import HeaderBar from "../HeaderBar";
 import SingleProductTile from "../SingleProductTile";
-import _ from "underscore";
+// import _ from "underscore";
 import "./index.css";
+import SingleProductCircleTile from "../SingleProductCircleTile";
+import ProductsGridTiles from "./ProductsGridTiles";
 
 function HomePage() {
   const dispatch = useDispatch();
 
   const products = useSelector(getProducts);
+  // debugger;
 
-  //create logic to randomize the 2x5 tiles
-  //use underscore.js to randomize the seed products
-  //better than Math.random()
-  const productListTiles = _.sample(products, 10).map((product) => (
+  // console.log(products);
+
+  const productTilesArr1 = products.slice(6, 16);
+  const productCircleTilesArr2 = products.slice(16, 22);
+
+  //don't use sample for now because render problem
+  // const productListTiles1 = _.sample(productTilesArr1, 10).map((product) => (
+  //   <SingleProductTile key={product.id} product={product}></SingleProductTile>
+  // ));
+
+  const productListTiles1 = productTilesArr1.map((product) => (
     <SingleProductTile key={product.id} product={product}></SingleProductTile>
   ));
-  // console.log(productListTiles);
-  console.log(products);
+
+  // const productListTiles2 = productTilesArr2.map((product) => (
+  //   <SingleProductTile key={product.id} product={product}></SingleProductTile>
+  // ));
+
+  //Create logic to randomize the circles under the header message
+  const productCircleTiles2 = productCircleTilesArr2.map((product) => (
+    <SingleProductCircleTile
+      key={product.id}
+      product={product}
+    ></SingleProductCircleTile>
+  ));
+
   // debugger;
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="home-page">
@@ -35,14 +56,19 @@ function HomePage() {
           <div>
             <h3>Recently viewed & more</h3>
           </div>
-          <ul className="product-list-tiles">{productListTiles}</ul>
+          <ul className="product-list-tiles">{productListTiles1}</ul>
         </div>
       </div>
 
-      <div className="footer">
-        <ul className="right-footer">
-          <li>&#169; Ming's Etzy</li>
-        </ul>
+      <div className="third-section">
+        <div className="product-tiles-wrapper">
+          <ul className="product-circle-tiles">{productCircleTiles2}</ul>
+        </div>
+      </div>
+
+      <div className="fourth-section">
+        <h3>Here are some more chill stuff</h3>
+        <ProductsGridTiles />
       </div>
     </div>
   );

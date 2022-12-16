@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { createCart } from "../../store/cart";
+import { addToCart } from "../../store/cart";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import "./CartModal.css";
@@ -17,8 +17,9 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
+  // border: "2px solid #000",
+  boxShadow: 44,
+  borderRadius: "10px",
   p: 4,
 };
 
@@ -28,15 +29,16 @@ export default function CartModal({ prop }) {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const handleClose = () => setOpen(false);
-
-  const carts = useSelector((state) =>
-    state.carts ? Object.values(state.carts) : []
+  console.log(prop);
+  const cart = useSelector((state) =>
+    state.cart ? Object.values(state.cart) : []
   );
   const productId = useParams();
 
   let cart_quantity = 0;
-  carts.forEach((cart) => {
+  cart.forEach((cart) => {
     if (cart.productId === parseInt(productId.productId)) {
+      // console.log(parseInt(productId.productId));
       cart_quantity = cart.quantity;
     }
   });
@@ -47,8 +49,7 @@ export default function CartModal({ prop }) {
     e.preventDefault();
     if (total <= prop.availability) {
       setMessage(`${prop.quantity} item(s) added to cart`);
-      // debugger;
-      dispatch(createCart(prop.productId, prop.quantity, prop.currentUserId));
+      dispatch(addToCart(prop.productId, prop.quantity, prop.currentUserId));
       setOpen(true);
       setError(false);
     } else {
@@ -57,8 +58,8 @@ export default function CartModal({ prop }) {
   };
 
   return (
-    <div>
-      <Button id="add-to-cart" onClick={add_to_cart}>
+    <div className="add-btn">
+      <Button className="add-to-cart" onClick={add_to_cart}>
         Add to cart
       </Button>
       {!error && (
@@ -69,22 +70,25 @@ export default function CartModal({ prop }) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style} className="cart-modal">
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Added to cart
+            <Typography
+              className="modal-modal-title"
+              variant="h6"
+              component="h2"
+            >
+              Added to cart!
             </Typography>
             <Typography className="modal-modal-description" sx={{ mt: 2 }}>
               {message}.
-              <Link to="/cart" id="view-cart-btn">
+              <Link to="/cart" className="view-cart-btn">
                 View cart & check out{" "}
               </Link>
-              <span onClick={handleClose} id="keep-shopping-btn">
+              <span onClick={handleClose} className="keep-shopping-btn">
                 Continue Shopping <EastIcon sx={{ fontSize: 20 }} />
               </span>
             </Typography>
           </Box>
         </Modal>
       )}
-      {error && <div className="cart-error-message">Exceed stock limit</div>}
     </div>
   );
 }

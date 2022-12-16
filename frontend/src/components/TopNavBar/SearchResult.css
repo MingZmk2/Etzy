@@ -1,0 +1,131 @@
+
+
+.search-res-comp {
+  min-height: 100vh;
+}
+
+.search-header-container {
+  background-color: #DDEBE3;
+  color: #222222;
+  padding-top: 43px;
+  padding-bottom: 44px;
+  padding-left:100px;
+  font-size: 32px;
+  font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
+}
+
+.search-products-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* // position: absolute; */
+  margin-top: 17px;
+  margin-left: 29px;
+  width: 1459px;
+}
+
+.search-results-container {
+  /* // position: absolute; */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 48px;
+}
+
+.search-results-container > h1 {
+  position: relative;
+  left: -539px;
+  font-size: 32px;
+
+}
+
+.li-search-results {
+  width: 328px;
+  padding: 19px;
+}
+
+.cap-link {
+  text-decoration: none;
+  color: #222222
+}
+
+.cap-link:visited {
+  text-decoration: none;
+}
+
+.search-result-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 201px;
+  max-width: 252px;
+  /* border-radius: 20px; */
+  overflow: hidden;
+  /* box-shadow: 3px 3px 3px 3px #C6D5D8; */
+  background-color: #242424;
+}
+
+.cap-link .search-result-image-container:hover{
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.206);
+}
+
+.search-result-image-container > img {
+  max-width: 100%;
+  background-color: #242424;
+}
+
+.search-result-title {
+  height: max-content;
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans";
+  font-size: 21px; 
+  overflow-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px;
+  margin-top: -5px;
+}
+
+.search-results-price {
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans";
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.search-footer-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.search-error-bg {
+  /* background-image: url("cow-bg.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 35%;
+  margin-top: -66px;
+}
+
+.search-error-text {
+  position: absolute;
+  top: 43px;
+  left: 100px;
+  z-index: 1;
+  /* text-shadow: 1px 2px 2px #aabbd4; */
+}
+
+.search-error-text > h1 {
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans";
+  font-size: 30px;
+  color: #964b4b;
+}
+
+.search-error-text > span {
+  font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans";
+  font-size: 20px;
+  color: #6f3535;
+  /* margin-left: 40px; */
+}

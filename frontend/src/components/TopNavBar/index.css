@@ -8,6 +8,7 @@ ul{
   padding-bottom: 7px;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid rgba(34, 34, 34, 0.15);
 }
 
 .logo {
@@ -21,7 +22,7 @@ ul{
   color: var(--primary-orange);
 }
 
-.search-bar {
+/* .search-bar {
   flex: 1;
   width: 900px;
   height: 40px;
@@ -29,7 +30,7 @@ ul{
   margin: 10px 10px;
   border: 2px solid black;
   padding-left: 20px;
-}
+} */
 
 .cart-btn {
   margin: 10px;
@@ -55,19 +56,29 @@ ul{
   border: none;
   font-size: 18px;
   height: 37px;
-  position: relative;
-  top: 5px;
-  right: 50px;
-  z-index: 1;
+  position: absolute;
+  top: 18px;
+  left: 167px;
+  /* z-index: 1; */
+}
+
+.search-bar-btn svg {
+  width: 24px;
+  height: 24px;
+ 
 }
 
 .signin-btn {
-  margin: 10px;
-  margin-left: -10px;
+  /* margin: 10px; */
+  margin-left: -20px;
   background-color: white;
   border: none;
   font-size: 14px;
+  white-space: nowrap;
+  /* font-weight: 500; */
 }
+
+
 
 .profile-btn:hover {
   /* background-color: grey; */
@@ -96,6 +107,7 @@ ul{
   cursor: pointer;
   border-radius: 50%;
   overflow: hidden;
+  margin-left:-20px;
 }
 
 .profile-btn > img{
@@ -109,16 +121,17 @@ ul{
   display: block;
 }
 
+
 .dropdown-content {
   display: none;
   border: 1px solid white;
   border-radius: 10px;
   position: absolute;
-  top: 12px;
+  top: 26px;
   background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   min-width: 150px;
-  margin-left:-10px;
+  left: -20px;
 }
 
 .dropdown-content > li {
@@ -131,20 +144,22 @@ ul{
 .dropdown-content > li > svg{
   width: 24px;
   height: 24px;
-  margin-left: -40px;
+  margin-left: -4px;
+  margin-bottom: -5px;
 }
 
 .dropdown-content li:hover {
   background-color: lightgray;
 }
 
-span {
+.dropdown-content span {
   padding-left: 10px;
   font-family: "Graphik Webfont", -apple-system, "Helvetica Neue", "Droid Sans",
     Arial, sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: black;
+  
 }
 
 

@@ -18,9 +18,10 @@
   margin-right: 10px;
   font-size: 18px;
 }
-.checkout{
+.cart-payment-section{
+  padding: 20px 20px;
   width: 425px;
-  height: 600px;
+  height: 400px;
   box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
   border-radius: 18px !important;
   overflow: hidden !important;
@@ -29,17 +30,16 @@
   max-width: 33.33333%;
   min-width: 260px;
   margin-left: 50px;
+  margin-bottom: 300px;
 }
 .secure-payment-header{
   display: flex;
   align-items: center;
   margin-left: 15px;
 }
-#visa-icon>img{
-  width: 80%;
-}
+
 .checkout-link {
-  background-color: black;
+  background-color: #222222;
   color: white;
   padding: 15px;
   text-decoration: none;

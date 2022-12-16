@@ -1,8 +1,8 @@
-#add-to-cart{
+.add-btn{
   text-transform: unset !important;
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
-  background-color: black;
-  color: white;
+  background-color: #222222;
+  color: rgb(193, 65, 65);
   padding: 15px;
   text-decoration: none;
   border: none;
@@ -13,7 +13,16 @@
   text-align: center;
   width: 100%;
 }
-#add-to-cart:hover, #view-cart-btn:hover{
+
+.add-btn button{
+  color: white;
+}
+
+.add-btn button :hover{
+  background-color: rgb(68, 66, 66);
+  box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+}
+ .view-cart-btn:hover{
   background-color: rgb(68, 66, 66);
   box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
 }
@@ -21,8 +30,8 @@
   display: flex;
   flex-direction: column;
 }
-#view-cart-btn{
-  background-color: black;
+.view-cart-btn{
+  background-color: #222222;
   color: white;
   padding: 15px;
   text-decoration: none;
@@ -34,7 +43,8 @@
   margin-top: 15px;
   width: 90%;
 }
-#keep-shopping-btn{
+.keep-shopping-btn{
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,14 +57,10 @@
   font-size: 15px;
   margin-top: 15px;
   width:90%;
+  background-color: #222222;
 }
-#keep-shopping-btn:hover{
-  background-color: #EFEFEF;
+.keep-shopping-btn:hover{
+  background-color: rgb(68, 66, 66);
   transition: all 0.2s ease-in-out;
 } 
-/* error */
-.cart-error-message{
-  color: #A61A2E;
-  text-align: center;
-  margin-top: 5px;
-}
+ 

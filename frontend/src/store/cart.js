@@ -27,7 +27,7 @@ export const fetchCart = (userId) => async (dispatch) => {
   return res;
 };
 
-export const createCart =
+export const addToCart =
   (product_id, quantity, buyer_id) => async (dispatch) => {
     const add_product = { product_id, quantity, buyer_id };
     const res = await csrfFetch("/api/cart_products", {
@@ -36,7 +36,7 @@ export const createCart =
     });
     const data = await res.json();
     dispatch(addCart(data));
-    return res;
+    // return res;
   };
 
 export const updateCart =
@@ -48,7 +48,7 @@ export const updateCart =
     });
     const data = await res.json();
     dispatch(addCart(data));
-    return res;
+    // return res;
   };
 
 export const removeCart = (cartId) => async (dispatch) => {
@@ -56,7 +56,7 @@ export const removeCart = (cartId) => async (dispatch) => {
     method: "DELETE",
   });
   dispatch(deleteCart(cartId));
-  return res;
+  // return res;
 };
 
 const cartReducer = (state = {}, action) => {

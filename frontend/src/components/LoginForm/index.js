@@ -39,7 +39,7 @@ export default function LoginForm({ onSuccess }) {
   const handleDemoUser = () => {
     setErrors("");
     const user = {
-      email: "jack@jack.com",
+      email: "lebron@james.com",
       password: "password",
     };
     dispatch(loginUser(user))

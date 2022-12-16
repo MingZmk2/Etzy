@@ -1,0 +1,28 @@
+.search-bar {
+  width: 1035px;
+  height: 40px;
+  text-align: left;
+  border-width: 2px;
+  border-color: #222222;
+  border-radius: 20px;
+  padding: 1%;
+  margin: 10px 10px;
+}
+
+
+/* .search-form {
+  display: flex;
+} */
+
+.search-form > input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-form > button {
+  position: relative;
+  left:-60px;
+  top: 6px;
+  /* margin-left: 1051px; */
+  color: transparent;
+ 
+}

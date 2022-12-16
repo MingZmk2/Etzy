@@ -9,20 +9,31 @@ import "./CartCheckout.css";
 
 function CartCheckout() {
   const dispatch = useDispatch();
-  const carts = useSelector((state) => Object.values(state.carts));
+
+  const cart = useSelector((state) =>
+    state.cart ? Object.values(state.cart) : []
+  );
+
   let total = 0;
-  carts.forEach((element) => (total += element.quantity * element.price));
+  cart.forEach((product) => (total += product.quantity * product.price));
+
   let total_products = 0;
-  carts.forEach((element) => (total_products += element.quantity));
+  cart.forEach((product) => (total_products += product.quantity));
+
+  //no need for discount for now
   let discount = 0;
+  // (total + discount).toFixed(2)
+
+  let Subtotal = (total + discount).toFixed(2);
+  let totalPriceFixed = total.toFixed(2);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    carts.forEach((cart) => dispatch(removeCart(cart.id)));
+    cart.forEach((cart) => dispatch(removeCart(cart.id)));
   };
 
   return (
-    <div className="checkout">
+    <div className="cart-payment-section">
       <div className="secure-payment-header">
         <LockIcon />
         <p> Secure options in checkout</p>
@@ -30,23 +41,23 @@ function CartCheckout() {
       <div id="visa-icon">{/* <img src={visaicon} alt="" /> */}</div>
       <div className="products-total">
         <span>Item(s) total</span>
-        <p>${total.toFixed(2)}</p>
+        <p>${totalPriceFixed}</p>
       </div>
       <hr />
       <div className="products-total-sub">
         <p>Subtotal</p>
-        <p>${(total + discount).toFixed(2)}</p>
+        <p>${Subtotal}</p>
       </div>
-      <div className="products-total-sub">
+      <div className="products-total-shipping">
         <p>Shipping</p>
         <p>Free</p>
       </div>
       <hr />
-      <div className="products-total">
+      <div className="products-total-item-price">
         <span>Total({total_products} items)</span>
-        <span>${(total + discount).toFixed(2)}</span>
+        <span>${totalPriceFixed}</span>
       </div>
-      <form className="checkout-button" onClick={onSubmit}>
+      <form className="checkout-button" onSubmit={onSubmit}>
         <Link to="/checkout" className="checkout-link">
           Proceed to checkout
         </Link>
