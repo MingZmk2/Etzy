@@ -14,7 +14,6 @@ function CartProduct({ product }) {
   for (let i = 1; i <= product.stock; i++) {
     numsArr.push(i);
   }
-  // console.log(numsArr);
 
   const handleClick = (e) => {
     e.preventDefault();

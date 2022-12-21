@@ -21,7 +21,6 @@ export default function HeaderBar() {
 
   const productCircleTilesArr = products.slice(0, 6);
 
-  //Create logic to randomize the circles under the header message
   const productCircleTiles = productCircleTilesArr.map((product) => (
     <SingleProductCircleTile
       key={product.id}
