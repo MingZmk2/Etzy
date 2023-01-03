@@ -10,7 +10,7 @@
 - React
 - Redux
 - Ruby on Rails
-- Postgresql
+- postgreSQL
 - AWS S3
 
 ## Functionality & MVPs
