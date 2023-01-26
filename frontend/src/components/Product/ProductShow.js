@@ -7,6 +7,7 @@ import CartModal from "../CartModal/CartModal";
 import { FormsModal } from "../FormsModal";
 import LocalShippingTwoToneIcon from "@mui/icons-material/LocalShippingTwoTone";
 import "./ProductShow.css";
+import Review from "../Reviews/Reviews";
 
 const ProductShow = () => {
   const dispatch = useDispatch();
@@ -71,7 +72,7 @@ const ProductShow = () => {
         <div className="product1-left">
           <div className="product1-img-reviews">
             <img src={product.photoUrl} alt="" />
-            {/* <Review /> */}
+            <Review />
           </div>
         </div>
         <div className="product1-container">

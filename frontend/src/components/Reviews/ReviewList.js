@@ -27,7 +27,7 @@ const ReviewList = ({ review, handleEdit, setNotice }) => {
       >
         <Rating name="read-only" value={review.rating} readOnly />
       </Box>
-      <span className="review-content">{review.content}</span>
+      <span className="review-comment">{review.comment}</span>
       <div className="review-author">
         <span>
           {review.reviewer} {review.createdAt}

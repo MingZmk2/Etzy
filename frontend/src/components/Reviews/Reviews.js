@@ -9,7 +9,7 @@ import {
   createReview,
 } from "../../store/reviews.js";
 import ReviewList from "./ReviewList";
-import LoginFormModal from "../LoginFormModal/Modal";
+import { FormsModal } from "../FormsModal";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import "./Reviews.css";
@@ -23,7 +23,7 @@ const ReviewShow = () => {
   }
   const sessionUser = useSelector((state) => state.session.user);
   const reviews = useSelector((state) => state.reviews);
-  const [content, setContent] = useState("");
+  const [comment, setComment] = useState("");
   const [rating, setRating] = useState(0);
   const [allowEdit, setAllowEdit] = useState(false);
   const [review, setReview] = useState("");
@@ -41,7 +41,7 @@ const ReviewShow = () => {
       text: "Submit review",
       type: "submit-review-button",
     };
-    submitButton = <LoginFormModal message={message} />;
+    submitButton = <FormsModal message={message} />;
   }
   useEffect(() => {
     const review_arr = Object.values(reviews);
@@ -58,7 +58,7 @@ const ReviewShow = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (content === "") {
+    if (comment === "") {
       return setErrMessage("Please leave a comment");
     } else if (rating === 0) {
       return setErrMessage("Please rate the product");
@@ -66,14 +66,14 @@ const ReviewShow = () => {
     if (allowEdit && rating !== 0) {
       let reviewToEdit = {
         id: review.id,
-        content: content,
+        comment: comment,
         rating: rating,
         productId: productId,
         reviewerId: sessionUser.id,
       };
       dispatch(updateReview(reviewToEdit));
       setAllowEdit(false);
-      setContent("");
+      setComment("");
       setRating("");
       setNotice(true);
     } else {
@@ -81,20 +81,20 @@ const ReviewShow = () => {
         setNotice(true);
       } else {
         let reviewToSubmit = {
-          content: content,
+          comment: comment,
           rating: rating,
           productId: productId,
           reviewerId: sessionUser.id,
         };
         dispatch(createReview(reviewToSubmit));
-        setContent("");
+        setComment("");
         setRating("");
         setNotice(true);
       }
     }
   };
   const handleEdit = (e) => {
-    setContent(e.content);
+    setComment(e.comment);
     setRating(e.rating);
     setAllowEdit(true);
     setNotice(false);
@@ -132,8 +132,8 @@ const ReviewShow = () => {
                 <textarea
                   cols="60"
                   rows="10"
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
                   placeholder="Type comment here"
                   id="review-text"
                 ></textarea>

@@ -46,9 +46,9 @@ export const createReview = (review) => async (dispatch) => {
 };
 
 export const updateReview =
-  ({ content, product_id, reviewer_id, rating, id }) =>
+  ({ comment, product_id, reviewer_id, rating, id }) =>
   async (dispatch) => {
-    const update_review = { content, product_id, reviewer_id, rating };
+    const update_review = { comment, product_id, reviewer_id, rating };
     const res = await csrfFetch(`/api/reviews/${id}`, {
       method: "PATCH",
       body: JSON.stringify(update_review),
