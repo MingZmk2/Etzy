@@ -1,8 +1,9 @@
 .product1{
   display: flex;
   max-width: 1350px;
-  margin: auto 0;
+  margin: 0 auto;
   margin-top: 34px; 
+  
 }
 .product1-container{
   min-height: 1000px;
@@ -136,15 +137,29 @@
   margin-right: 5px;
 }
 /* description  */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #a8a8a8;
+  /* box-shadow: 0 0 1px rgba(255, 255, 255, .5); */
+}
+
 .product1-description{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 1px;
-  max-height: 210px;
-  overflow:visible;
+  max-height: 215px;
+  /* overflow:visible; */
+  /* overflow-y: scroll; */
+  overflow: scroll;
   line-height: 20px;
 }
+
 #product1-description-title{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
   font-weight: 500;
@@ -167,9 +182,6 @@
 }
 
 .show-dropdown{
-
-    
-
     transition: border-color 200ms ease-out,box-shadow 200ms ease-out;
     -webkit-appearance: none;
     -ms-appearance: none;
