@@ -1,4 +1,48 @@
+.footer-container {
+  background-color: #D7E6F5;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+  color: black;
+  padding: 2rem;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% auto;
+  grid-template-columns: 25% 25% 25% auto;
+  font-size: 1.25rem;
+}
 
+.footer-col,
+.footer-list-container,
+.help-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-col h1{
+  /* margin-top: 1.25vh; */
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-col p, .footer-col a {
+    margin-top: 0.75rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.social-links img {
+  padding-right: 8px;
+  height: 64px;
+  width: 64px;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+  transition: 250ms ease-in-out;
+}
+
+
+
+/* 
 
 .footer ul{
   margin: 0;
@@ -39,7 +83,7 @@
   
 }
 
-
+ */
 
 
 /* li img {
