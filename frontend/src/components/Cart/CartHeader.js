@@ -13,7 +13,7 @@ function CartHeader() {
             sx={{ fontSize: 40 }}
           />
           <p>
-            Etzy Purchase Protection: Shop confidently on Betsy knowing if
+            Etzy Purchase Protection: Shop confidently on Etzy knowing if
             something goes wrong with an order, we've got your back.
           </p>
         </div>
