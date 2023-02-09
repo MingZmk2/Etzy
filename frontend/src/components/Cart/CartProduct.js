@@ -81,7 +81,7 @@ function CartProduct({ product }) {
           <div className="cart-note">
             <textarea
               name="message to seller"
-              placeholder={`Add a note to ${product.firstName}(optional)`}
+              placeholder={`Add a note (optional)`}
             ></textarea>
             <div>
               <span id="shipping-info">

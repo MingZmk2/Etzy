@@ -21,14 +21,16 @@
   border-radius: 6px;
 }
 .cart-product-name{
-  width: 388px;
+  width: 425px;
   display: flex;
   flex-direction: column;
 }
 .cart-product-name-link{  
   text-decoration: none;
   color: black;
-  font-size: 26px;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 16px;
   margin-top: 5px;
 }
 .cart-product-name-link:hover{

@@ -7,6 +7,7 @@ import "./index.css";
 import CartProduct from "./CartProduct";
 import CartCheckout from "./CartCheckout";
 import { Link } from "react-router-dom";
+import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -43,19 +44,29 @@ function Cart() {
   }
 
   return (
-    <div className="cart-wrapper">
-      <div className="cart">
-        {/* write conditonal for just one item header message*/}
-        <h1>{total} items in your cart</h1>
-        <Link to="/">Keep Shopping</Link>
-        <CartHeader />
-        <div className="cart-main">
-          <ul>{cartProducts}</ul>
-          <CartCheckout />
+    <>
+      <div className="cart-wrapper">
+        <div className="cart">
+          {/* write conditonal for just one item header message*/}
+          <div className="checkout-title-and-main-redirect">
+            <h1>{total} items in your cart</h1>
+            <button className="checkout-bold-btn">
+              <Link to="/">Keep Shopping</Link>
+            </button>
+          </div>
+
+          <CartHeader />
+          <div className="cart-main">
+            <ul>{cartProducts}</ul>
+            <CartCheckout />
+          </div>
         </div>
-        <hr />
       </div>
-    </div>
+      <p className="energy-message">
+        <EnergySavingsLeafIcon />
+        Etzy offsets carbon emissions from every delivery
+      </p>
+    </>
   );
 }
 

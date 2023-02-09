@@ -76,7 +76,7 @@ export default function CartModal({ prop }) {
             <Typography className="modal-modal-description" sx={{ mt: 2 }}>
               {message}.
               <Link to="/cart" id="view-cart-btn">
-                View cart & check out{" "}
+                View cart & checkout{" "}
               </Link>
               <span onClick={handleClose} id="keep-shopping-btn">
                 Continue shopping <EastIcon sx={{ fontSize: 20 }} />

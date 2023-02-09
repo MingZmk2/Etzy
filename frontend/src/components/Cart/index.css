@@ -19,27 +19,53 @@
     padding: 0 8px;
     width: 1350px;
   }
-.cart > h1{
+.checkout-title-and-main-redirect > h1{
   font-family: "Guardian-EgypTT",Charter,"Charter Bitstream",Cambria,"Noto Serif Light","Droid Serif",Georgia,serif;
-  font-weight: lighter;
-  letter-spacing: 0.5px;
-  font-size: 34px;
-  line-height: 28px;
-  margin-top: 25px;
-  margin-bottom: -15px;
-  font-weight: 300;
+  font-size: 32px;
+    line-height: 36px;
+    font-weight: 300;
+    letter-spacing: .5px;
+    margin-top: 25px;
+    margin-bottom: -15px;   
 }
 
-.cart > a{
-  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
-  font-size: 16px;   
-  /* position: relative; */
-  /* right: 60px; */
-  /* left: */
-  float: right;
+.checkout-title-and-main-redirect > button{
   font-weight: bold;
   cursor: pointer;
+  background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+    border-radius: 24px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    min-height: 48px;
+    min-width: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    margin-top: 25px;
+    margin-bottom: -15px;
 }
+
+.checkout-title-and-main-redirect > button:hover{
+  background-color: rgb(227, 227, 227);
+}
+
 
 .cart ul{
     /* width: 65%; */
@@ -57,4 +83,24 @@
 }
 .cart-item-main{
     display: flex;
+}
+
+.checkout-title-and-main-redirect {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.energy-message {
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;  
+  margin-top:60px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
