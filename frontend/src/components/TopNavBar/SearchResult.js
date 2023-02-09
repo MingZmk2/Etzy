@@ -77,12 +77,9 @@ const SearchResult = () => {
         <div className="search-footer-container">
           <div className="search-error-bg"></div>
           <div className="search-error-text">
-            <h1>Error can't find "{searchCompareRef}"</h1>
+            <h1>Sorry, can't find "{searchCompareRef}"</h1>
             <br />
-            <span>
-              Try searching something else instead? ***fix message during
-              styling
-            </span>
+            <span>Try searching for something else instead?</span>
           </div>
         </div>
       ) : null}

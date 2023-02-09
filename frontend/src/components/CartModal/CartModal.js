@@ -29,7 +29,7 @@ export default function CartModal({ prop }) {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const handleClose = () => setOpen(false);
-  console.log(prop);
+  // console.log(prop);
   const cart = useSelector((state) =>
     state.cart ? Object.values(state.cart) : []
   );
@@ -58,8 +58,8 @@ export default function CartModal({ prop }) {
   };
 
   return (
-    <div className="add-btn">
-      <Button className="add-to-cart" onClick={add_to_cart}>
+    <div>
+      <Button id="add-btn" onClick={add_to_cart}>
         Add to cart
       </Button>
       {!error && (
@@ -70,24 +70,23 @@ export default function CartModal({ prop }) {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style} className="cart-modal">
-            <Typography
-              className="modal-modal-title"
-              variant="h6"
-              component="h2"
-            >
+            <Typography id="modal-modal-title" variant="h6" component="h2">
               Added to cart!
             </Typography>
             <Typography className="modal-modal-description" sx={{ mt: 2 }}>
               {message}.
-              <Link to="/cart" className="view-cart-btn">
+              <Link to="/cart" id="view-cart-btn">
                 View cart & check out{" "}
               </Link>
-              <span onClick={handleClose} className="keep-shopping-btn">
-                Continue Shopping <EastIcon sx={{ fontSize: 20 }} />
+              <span onClick={handleClose} id="keep-shopping-btn">
+                Continue shopping <EastIcon sx={{ fontSize: 20 }} />
               </span>
             </Typography>
           </Box>
         </Modal>
+      )}
+      {error && (
+        <div className="cart-error-message">Purchase limit exceeded</div>
       )}
     </div>
   );

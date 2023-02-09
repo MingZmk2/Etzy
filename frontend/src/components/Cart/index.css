@@ -33,8 +33,10 @@
 .cart > a{
   font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
   font-size: 16px;   
-  position: absolute;
-  right: 60px;
+  /* position: relative; */
+  /* right: 60px; */
+  /* left: */
+  float: right;
   font-weight: bold;
   cursor: pointer;
 }

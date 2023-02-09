@@ -53,6 +53,7 @@
 .review-header h1{
   font-weight: 200;
   font-size: 26px;
+  margin-bottom: 8px;
 }
 #review-error{
   color:#A61A2E;
@@ -73,19 +74,19 @@
 .submit-button-container{
   margin-top: 10px;
 }
-/* .review-right{
+.review-right{
   margin-left: 30px;
 }
 .review-right > h3{
   margin-top: 0;
-  margin-bottom: -10px;
+  margin-bottom: 10px;
   font-size: 16px;
   font-weight: 700;
 }
 .review-right ul li{
   font-weight: 300;
   font-size: 16px;
-} */
+}
 #submit-review{
   all: unset;
   background-color: black;
@@ -95,7 +96,7 @@
   border-radius: 30px;
   font-size: 15px;
   font-weight: 500;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 #submit-review:hover{
   background-color: rgb(68, 66, 66);
