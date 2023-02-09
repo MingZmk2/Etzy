@@ -1,27 +1,73 @@
+.cart-payment-section .cart-payment-padding ul li{
+  padding-top: 8px;
+}
+
+.cart-payment-section .cart-payment-padding hr{
+  border: 1px solid rgba(34,34,34,.15) !important;
+}
+
 .products-total{
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  font-weight: 500;
-  font-size: 18px;
+  margin-top: 15px;
 }
+
+.visa-img{
+  display: inline-block;
+    /* width: 48px; */
+    height: 32px;
+    /* border: 1px solid #e2e2e2; */
+    background: #fdfdfc;
+    /* border-radius: 3px; */
+    text-align: center;
+    box-shadow: 0 1px 0 rgb(226 226 226 / 20%);
+    vertical-align: middle;
+}
+
+.paypal-img, .googlepay-img, .klarna-img{
+  display: inline-block;
+    width: 48px;
+    height: 32px;
+    /* border: 1px solid #e2e2e2; */
+    background: #fdfdfc;
+    /* border-radius: 3px; */
+    text-align: center;
+    box-shadow: 0 1px 0 rgb(226 226 226 / 20%);
+    vertical-align: middle;
+}
+
+.products-total span{
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+}
+
 .products-total p{
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-size: 16px;
+    line-height: 28px;
   font-weight: 200;
 }
 .products-total-sub{
   display: flex;
   justify-content: space-between;
   font-weight: 200;
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 18px;
+  font-size: 16px;
+}
+.products-total-shipping{
+  margin-top: 9px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 200;
+  font-size: 16px;
 }
 .cart-payment-section{
   padding: 20px 20px;
   width: 425px;
-  height: 400px;
+  height: 500px;
   box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
   border-radius: 18px !important;
   overflow: hidden !important;
@@ -32,10 +78,19 @@
   margin-left: 50px;
   margin-bottom: 300px;
 }
-.secure-payment-header{
-  display: flex;
+/* .secure-payment-header{
   align-items: center;
   margin-left: 15px;
+} */
+
+.checkout-heading{
+  -webkit-text-stroke: black;
+  -webkit-text-stroke-width: 0.2px;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  margin-bottom: 1.5%;
 }
 
 .checkout-link {
@@ -46,9 +101,11 @@
   border: none;
   cursor: pointer;
   border-radius: 30px;
-  font-size: 15px;
+  font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
   margin-top: 15px;
-  width: 95%;
+  width: 100%;
   text-align: center;
 }
 .checkout-link:hover{
@@ -58,4 +115,25 @@
 .checkout-button{
   display: flex;
   justify-content: center;
+}
+
+.products-total-item-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 9px;
+}
+
+.tax-note{
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #898989;
+    margin-top: 25px !important;
+    text-align: center
 }

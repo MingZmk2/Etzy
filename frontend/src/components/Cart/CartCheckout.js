@@ -34,11 +34,12 @@ function CartCheckout() {
 
   return (
     <div className="cart-payment-section">
-      <div className="secure-payment-header">
-        <p>How you'll pay</p>
+      <div className="cart-payment-padding">
+        <p className="checkout-heading">How you'll pay</p>
         <ul>
           <li>
             <input
+              className="radio-pay"
               type="radio"
               id="visa-master-amex-"
               name="payment-method"
@@ -46,7 +47,7 @@ function CartCheckout() {
             />
             &nbsp;
             <label htmlFor="visa-master-amex-">
-              Visa, Master, Amex, and Discover
+              <img className="visa-img" src="../visa.png" alt="visa" />
               {/* <ul>
                 <li>
                   <div>
@@ -60,50 +61,76 @@ function CartCheckout() {
           </li>
           <li>
             <input
+              className="radio-pay"
               type="radio"
               id="paypal"
               name="payment-method"
               value="Paypal"
             />
             &nbsp;
-            <label htmlFor="paypal">Paypal</label>
+            <label htmlFor="paypal">
+              <img className="paypal-img" src="../paypal.png" alt="paypal" />
+            </label>
           </li>
           <li>
             <input
+              className="radio-pay"
+              type="radio"
+              id="googlepay"
+              name="payment-method"
+              value="googlepay"
+            />
+            &nbsp;
+            <label htmlFor="googlepay">
+              <img
+                className="googlepay-img"
+                src="../googlepay.png"
+                alt="googlepay"
+              />
+            </label>
+          </li>
+          <li>
+            <input
+              className="radio-pay"
               type="radio"
               id="klarna"
               name="payment-method"
               value="Klarna"
             />
             &nbsp;
-            <label htmlFor="klarna">Klarna</label>
+            <label htmlFor="klarna">
+              <img className="klarna-img" src="../klarna.png" alt="klarna" />
+            </label>
           </li>
         </ul>
+
+        <div id="visa-icon">{/* <img src={visaicon} alt="" /> */}</div>
+        <div className="products-total">
+          <span>Item(s) total</span>
+          <p>${totalPriceFixed}</p>
+        </div>
+        <hr />
+        <div className="products-total-sub">
+          <p>Subtotal</p>
+          <p>${Subtotal}</p>
+        </div>
+        <div className="products-total-shipping">
+          <p>Shipping</p>
+          <p>Free</p>
+        </div>
+        <hr />
+        <div className="products-total-item-price">
+          <span>Total ({total_products} items)</span>
+          <span>${totalPriceFixed}</span>
+        </div>
+        <form className="checkout-button" onSubmit={onSubmit}>
+          <Link to="/checkout" className="checkout-link">
+            Proceed to checkout
+          </Link>
+        </form>
+
+        <div className="tax-note">* Additional duties and taxes may apply</div>
       </div>
-      <div id="visa-icon">{/* <img src={visaicon} alt="" /> */}</div>
-      <div className="products-total">
-        <span>Item(s) total</span>
-        <p>${totalPriceFixed}</p>
-      </div>
-      <hr />
-      <div className="products-total-sub">
-        <p>Subtotal</p>
-        <p>${Subtotal}</p>
-      </div>
-      <div className="products-total-sub">
-        <p>Shipping</p>
-        <p>Free</p>
-      </div>
-      <hr />
-      <div className="products-total-item-price">
-        <span>Total({total_products} items)</span>
-        <span>${totalPriceFixed}</span>
-      </div>
-      <form className="checkout-button" onSubmit={onSubmit}>
-        <Link to="/checkout" className="checkout-link">
-          Proceed to checkout
-        </Link>
-      </form>
     </div>
   );
 }
