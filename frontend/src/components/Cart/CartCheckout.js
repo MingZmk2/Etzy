@@ -35,8 +35,50 @@ function CartCheckout() {
   return (
     <div className="cart-payment-section">
       <div className="secure-payment-header">
-        <LockIcon />
-        <p> Secure options in checkout</p>
+        <p>How you'll pay</p>
+        <ul>
+          <li>
+            <input
+              type="radio"
+              id="visa-master-amex-"
+              name="payment-method"
+              value="Visa, Master, Amex, and Discover"
+            />
+            &nbsp;
+            <label htmlFor="visa-master-amex-">
+              Visa, Master, Amex, and Discover
+              {/* <ul>
+                <li>
+                  <div>
+                    <img src={window.visa} alt="" />
+                  </div>
+                </li>
+                <li><img src="" alt="" /></li>
+                <li><img src="" alt="" /></li>
+              </ul> */}
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="paypal"
+              name="payment-method"
+              value="Paypal"
+            />
+            &nbsp;
+            <label htmlFor="paypal">Paypal</label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              id="klarna"
+              name="payment-method"
+              value="Klarna"
+            />
+            &nbsp;
+            <label htmlFor="klarna">Klarna</label>
+          </li>
+        </ul>
       </div>
       <div id="visa-icon">{/* <img src={visaicon} alt="" /> */}</div>
       <div className="products-total">
@@ -48,7 +90,7 @@ function CartCheckout() {
         <p>Subtotal</p>
         <p>${Subtotal}</p>
       </div>
-      <div className="products-total-shipping">
+      <div className="products-total-sub">
         <p>Shipping</p>
         <p>Free</p>
       </div>
