@@ -1,25 +1,50 @@
-.footer-container {
+.footer-outer-container {
   background-color: #D7E6F5;
   font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
   color: black;
-  padding: 2rem;
-  display: grid;
+  /* padding: 2rem; */
+  /* display: grid;
   -ms-grid-columns: 25% 25% 25% auto;
-  grid-template-columns: 25% 25% 25% auto;
+  grid-template-columns: 25% 25% 25% auto; */
   font-size: 1.25rem;
+
+  width: 100%;
+    height: fit-content;
+    /* background-color: #2F466C; */
+    /* color: white; */
+    margin-top: 26px;
 }
 
-.footer-col,
+.footer-inner-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-col{
+  padding-top: 38px;
+  padding-bottom: 116px;
+}
+
+
+/* .footer-col,
 .footer-list-container,
 .help-container {
   display: flex;
   flex-direction: column;
-}
+} */
 
 .footer-col h1{
   /* margin-top: 1.25vh; */
   font-weight: 600;
   margin-bottom: 1rem;
+}
+
+.footer-col ul{
+  list-style: none;
+}
+
+.footer-list-container li{
+  margin-top: 0.75rem;
 }
 
 .footer-col p, .footer-col a {
