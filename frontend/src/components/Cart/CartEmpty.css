@@ -2,7 +2,9 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;    
+  font-family:"Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif; 
+  min-height: 100vh; 
+  margin-top: 50px;  
 }
 .cart-empty > h1{
   font-weight: 500;
